@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import Navbar from "../components/Navbar/Navbar";
+
+import Navbar from "../components/Navbar";
+import ProgressBar from "../components/ProgressBar";
 
 const Wrapper = styled.div`
   position: relative;
@@ -13,6 +15,7 @@ function Home() {
   return (
     <Wrapper>
       <Navbar />
+      <ProgressBar />
       </Wrapper>
   )
 }
