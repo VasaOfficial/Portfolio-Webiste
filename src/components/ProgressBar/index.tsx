@@ -53,6 +53,21 @@ const SideNav = styled.ul`
     color: whitesmoke;
     transition: color .4s ease-in-out;
   }
+
+  .side-nav>li {
+    position: relative;
+    top: -5px;
+    color: #fff;
+    font-size: 6px;
+    cursor: pointer;
+  }
+
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+
+  
 `
 
 function ProgressBar() {

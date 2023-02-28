@@ -24,18 +24,30 @@ const LogoContainer = styled.div`
   color: #000;
 `;
 
-const IconContainer = styled.div`
+const MenuContainer = styled.nav`
   font-size: 24px;
   color: #000;
   cursor: pointer;
   padding: 10px;
 `;
 
+const SideNav = styled.ul`
+  display: none;
+`
+
 function Navbar() {
   return (
     <NavbarContainer>
       <LogoContainer><img src={logo} alt="Logo" style={{ width: "95px", height: '95px' }} /></LogoContainer>
-      <IconContainer><img src={menuIcon} alt="Menu Icon" style={{ width: "30px", height: '30px' }} /></IconContainer>
+      <MenuContainer><img src={menuIcon} alt="Menu Icon" style={{ width: "30px", height: '30px' }} />
+        <SideNav>
+        <li className="is-active"><span>Home</span></li>
+                <li><span>Works</span></li>
+                <li><span>About</span></li>
+                <li><span>Contact</span></li>
+                <li><span>Hire us</span></li>
+        </SideNav>
+      </MenuContainer>
     </NavbarContainer>
   );
 };
