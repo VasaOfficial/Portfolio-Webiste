@@ -4,18 +4,16 @@ import menuIcon from '../../assets/menu.png'
 import logo from '../../assets/logo.png'
 
 const NavbarContainer = styled.nav`
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  max-width: 85%;
+  width: 85%;
   height: 70px;
-  box-align: center;
-  box-pack: center;
   background-color: #101119;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  padding-top: 20px
 `;
 
 const LogoContainer = styled.div`

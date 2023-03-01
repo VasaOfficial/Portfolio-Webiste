@@ -2,46 +2,19 @@ import styled from "styled-components";
 import Augustus from '../../../assets/augustus.png'
 
 const Section = styled.li`
-  position: absolute;
   width: 100%;
   height: 100%;
-
-  l-section {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .4s ease-in-out, visibility 0s .4s;
-  }
-
-  section-is-active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-    transition: opacity .4s ease-in-out .4s;
-  }
-
-  next {
-    transform: translateY(-45px);
-    transition: transform .4s ease-in-out;
-  }
-
-  prev {
-    transform: translateY(45px);
-    transition: transform .4s ease-in-out;
-  }
+  list-style: none;
 `;
 
 const Intro = styled.div`
-  position: relative;
   display: flex;
-  width: 900px;
-  max-width: 75%;
+  max-width: 85%;
+  width: 55%;
   height: 100%;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-
-  @media (max-width: 1180px)
-    max-width: 100%;
 `;
 
 const IntroBanner = styled.div`
@@ -57,16 +30,6 @@ const IntroBanner = styled.div`
     height: 2px;
     background-color: #282828;
   }
-
-  :after {
-    content: "";
-    position: absolute;
-    bottom: 18px;
-    left: 0;
-    width: 30px;
-    height: 4px;
-    background-color: #0f33ff;
-  }
 `;
 
 const Title = styled.h1`
@@ -75,6 +38,8 @@ const Title = styled.h1`
   font-weight: 900;
   line-height: 1;
   z-index: 1;
+  margin-top: -150px;
+  line-height: 1.5em;
 `;
 
 const Button = styled.button`
@@ -84,13 +49,14 @@ const Button = styled.button`
   text-transform: uppercase;
   background-color: white;
   border: none;
+  cursor: pointer;
 `;
 
 const Img = styled.img`
   position: absolute;
-  height: 300px;
+  height: 650px;
   bottom: 21px;
-  right: -12px;
+  right: 0;
 `;
 
 const IntroOptions = styled.div`
@@ -103,12 +69,12 @@ const IntroOptions = styled.div`
   a {
     max-width: 250px;
     text-decoration: none;
-    color: $muted-gray;
+    color: gray;
     transition: color .2s ease-in-out;
-  }
 
-  :hover {
-    color: $white;
+    :hover {
+      color: white;
+    }
   }
 
   h3 {
@@ -123,10 +89,10 @@ const IntroOptions = styled.div`
 
 function Home() {
   return (
-    <Section className={`l-section section-is-active `}>
+    <Section>
       <Intro>
         <IntroBanner>
-          <Title>Your next<br />interactive<br />experience</Title>
+          <Title>Hello<br />My name is<br />Vasilije</Title>
           <Button>Contact</Button>
           <Img src={Augustus} />
         </IntroBanner>
