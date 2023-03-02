@@ -10,7 +10,7 @@ const SideNavContainer = styled.nav`
   :before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     transform: translateY(-50%);
     width: 2px;
@@ -36,21 +36,20 @@ const SideNav = styled.ul`
 
   li {
     position: relative;
-    top: -5px;
+    top: -100px;
     color: #fff;
-    font-size: 6px;
     cursor: pointer;
+    font-size: 10px;
+    opacity: 0.2;
+    transition: font-size .4s ease-in-out, opacity .4s ease-in-out;
   }
 
   span {
     position: relative;
-    top: 3px;
     left: 10px;
     color: #fff;
-    font-size: 14px;
-    font-weight: 300;
-    opacity: 0;
-    visibility: hidden;
+    font-size: 12px;
+    font-weight: 800;
   }
   
   :before {
@@ -58,43 +57,28 @@ const SideNav = styled.ul`
     top: 3px;
     left: 10px;
     color: #555;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 800;
   }
-
-  li:nth-child(1)::before {
-    content: "01";
-    }
-    
-    li:nth-child(2)::before {
-    content: "02";
-    }
-    
-    li:nth-child(3)::before {
-    content: "03";
-    }
-    
-    li:nth-child(4)::before {
-    content: "04";
-    }
-    
-    li:nth-child(5)::before {
-    content: "05";
-    }
     
     li.is-active {
-    color: #0f33ff;
+    color: #eab308;
+    opacity: 1;
     transition: color .4s ease-in-out;
 
     span {
       opacity: 1;
       visibility: visible;
+      font-size: 18px;
+      color: white;
       transition: opacity .4s ease-in-out;
     }
     
     &::before {
       left: -33px;
       color: #fff;
+      font-size: 18px;
+      font-weight: 800;
     }
   }
 `

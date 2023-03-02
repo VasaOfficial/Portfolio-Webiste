@@ -12,14 +12,16 @@ const Container = styled.div`
   align-items: center;
   height: 100vh;
   position: relative;
+  padding-left: 60px;
 `
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 95%;
-  width: 90%;
+  max-width: 85%;
+  width: 85%;
+  height: 100vh;
   position: relative;
   padding-top: 100px;
 `
