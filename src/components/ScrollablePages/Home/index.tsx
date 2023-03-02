@@ -39,7 +39,7 @@ const Title = styled.h1`
   line-height: 1;
   z-index: 1;
   margin-top: -150px;
-  line-height: 1.5em;
+  line-height: 1.4em;
 `;
 
 const Button = styled.button`
@@ -92,7 +92,7 @@ function Home() {
     <Section>
       <Intro>
         <IntroBanner>
-          <Title>Hello<br />My name is<br />Vasilije</Title>
+          <Title>Hello<br />I&apos;m Vasa<br /></Title>
           <Button>Contact</Button>
           <Img src={Augustus} />
         </IntroBanner>

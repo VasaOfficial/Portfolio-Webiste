@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import menuIcon from '../../assets/menu.png'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo1.png'
 
 const NavbarContainer = styled.nav`
   position: fixed;
@@ -9,7 +9,7 @@ const NavbarContainer = styled.nav`
   max-width: 85%;
   width: 85%;
   height: 70px;
-  background-color: #101119;
+  background-color: #0c0c0c;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +36,7 @@ const SideNav = styled.ul`
 function Navbar() {
   return (
     <NavbarContainer>
-      <LogoContainer><img src={logo} alt="Logo" style={{ width: "95px", height: '95px' }} /></LogoContainer>
+      <LogoContainer><img src={logo} alt="Logo" style={{ width: "130px", height: '130px' }} /></LogoContainer>
       <MenuContainer><img src={menuIcon} alt="Menu Icon" style={{ width: "30px", height: '30px' }} />
         <SideNav>
         <li className="is-active"><span>Home</span></li>
