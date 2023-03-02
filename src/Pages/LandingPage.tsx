@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import Navbar from "../components/Navigation/Navbar";
 import Home from "../components/ScrollablePages/Home/index";
+import NavScroll from "../components/ProgressBar";
 
 // Whole page
 const Container = styled.div`
@@ -27,6 +28,7 @@ function LandingPage() {
       <Container>
           <Wrapper>
             <Navbar />
+            <NavScroll />
             <Home />
           </Wrapper>
       </Container>
