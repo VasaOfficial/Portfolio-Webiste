@@ -1,26 +1,38 @@
 import { useState } from "react";
 import { SideNavContainer, SideNav, ListItem, ListItemTitle } from "./styles";
 
+interface NavItem {
+  label: string;
+  id: string;
+}
+
 function NavScroll() {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const navItems: NavItem[] = [
+    { id: "home", label: "Home" },
+    { id: "works", label: "Works" },
+    { id: "about", label: "About" },
+    { id: "contact", label: "Contact" },
+    { id: "hire-us", label: "Hire us" },
+  ];
+
+  const handleItemClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <SideNavContainer>
       <SideNav>
-      <ListItem className={activeIndex === 0 ? "is-active" : ""} onClick={() => setActiveIndex(0)}>
-          <ListItemTitle>Home</ListItemTitle>
-        </ListItem>
-        <ListItem className={activeIndex === 1 ? "is-active" : ""} onClick={() => setActiveIndex(1)}>
-          <ListItemTitle>Works</ListItemTitle>
-        </ListItem>
-        <ListItem className={activeIndex === 2 ? "is-active" : ""} onClick={() => setActiveIndex(2)}>
-          <ListItemTitle>About</ListItemTitle>
-        </ListItem>
-        <ListItem className={activeIndex === 3 ? "is-active" : ""} onClick={() => setActiveIndex(3)}>
-          <ListItemTitle>Contact</ListItemTitle>
-        </ListItem>
-        <ListItem className={activeIndex === 4 ? "is-active" : ""} onClick={() => setActiveIndex(4)}>
-          <ListItemTitle>Hire us</ListItemTitle>
-        </ListItem>
+      {navItems.map(({ id, label }, index) => (
+          <ListItem
+            key={id}
+            className={activeIndex === index ? "is-active" : ""}
+            onClick={() => handleItemClick(index)}
+          >
+            <ListItemTitle>{label}</ListItemTitle>
+          </ListItem>
+        ))}
       </SideNav>
     </SideNavContainer>
   );
@@ -28,4 +40,4 @@ function NavScroll() {
 
 export default NavScroll;
 
-// refactor this code so that it doesnt repeat itself, add smother animation when switching pages
+//  add feature to change pages with scroll

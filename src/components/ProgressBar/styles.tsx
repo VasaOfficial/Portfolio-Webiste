@@ -55,7 +55,7 @@ export const ListItem = styled.li`
       visibility: visible;
       font-size: 18px;
       color: white;
-      transition: opacity 0.4s ease-in-out;
+      transition: opacity 0.4s ease-in-out, font-size 0.4s ease-in-out, color 0.4s ease-in-out;
     }
 
     &::before {
@@ -73,4 +73,5 @@ export const ListItemTitle = styled.span`
   color: #fff;
   font-size: 12px;
   font-weight: 800;
+  transition: font-size 0.4s ease-in-out, color 0.4s ease-in-out;
 `;
