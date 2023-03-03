@@ -21,6 +21,7 @@ export const SideNavContainer = styled.nav`
     z-index: 10;
   }
 `;
+
 export const SideNav = styled.ul`
   position: relative;
   display: flex;
@@ -33,35 +34,18 @@ export const SideNav = styled.ul`
   padding: 0;
   list-style-position: inside;
   z-index: 10;
+`;
 
-  li {
-    position: relative;
-    top: -100px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 10px;
-    opacity: 0.2;
-    transition: font-size 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  }
+export const ListItem = styled.li`
+  position: relative;
+  top: -100px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 10px;
+  opacity: 0.2;
+  transition: font-size 0.4s ease-in-out, opacity 0.4s ease-in-out;
 
-  span {
-    position: relative;
-    left: 10px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 800;
-  }
-
-  :before {
-    position: absolute;
-    top: 3px;
-    left: 10px;
-    color: #555;
-    font-size: 18px;
-    font-weight: 800;
-  }
-
-  li.is-active {
+  &.is-active {
     color: #eab308;
     opacity: 1;
     transition: color 0.4s ease-in-out;
@@ -81,4 +65,12 @@ export const SideNav = styled.ul`
       font-weight: 800;
     }
   }
+`;
+
+export const ListItemTitle = styled.span`
+  position: relative;
+  left: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
 `;

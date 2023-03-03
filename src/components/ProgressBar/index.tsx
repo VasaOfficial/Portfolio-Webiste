@@ -1,24 +1,26 @@
-import { SideNavContainer, SideNav } from './styles';
+import { useState } from "react";
+import { SideNavContainer, SideNav, ListItem, ListItemTitle } from "./styles";
 
 function NavScroll() {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <SideNavContainer>
       <SideNav>
-        <li className="is-active">
-          <span>Home</span>
-        </li>
-        <li>
-          <span>Works</span>
-        </li>
-        <li>
-          <span>About</span>
-        </li>
-        <li>
-          <span>Contact</span>
-        </li>
-        <li>
-          <span>Hire us</span>
-        </li>
+      <ListItem className={activeIndex === 0 ? "is-active" : ""} onClick={() => setActiveIndex(0)}>
+          <ListItemTitle>Home</ListItemTitle>
+        </ListItem>
+        <ListItem className={activeIndex === 1 ? "is-active" : ""} onClick={() => setActiveIndex(1)}>
+          <ListItemTitle>Works</ListItemTitle>
+        </ListItem>
+        <ListItem className={activeIndex === 2 ? "is-active" : ""} onClick={() => setActiveIndex(2)}>
+          <ListItemTitle>About</ListItemTitle>
+        </ListItem>
+        <ListItem className={activeIndex === 3 ? "is-active" : ""} onClick={() => setActiveIndex(3)}>
+          <ListItemTitle>Contact</ListItemTitle>
+        </ListItem>
+        <ListItem className={activeIndex === 4 ? "is-active" : ""} onClick={() => setActiveIndex(4)}>
+          <ListItemTitle>Hire us</ListItemTitle>
+        </ListItem>
       </SideNav>
     </SideNavContainer>
   );
@@ -26,4 +28,4 @@ function NavScroll() {
 
 export default NavScroll;
 
-// Change li and span elements into a styled-components, make a feature on-click event to add 'is-active' to elements when clicked but only on one
+// refactor this code so that it doesnt repeat itself, add smother animation when switching pages
