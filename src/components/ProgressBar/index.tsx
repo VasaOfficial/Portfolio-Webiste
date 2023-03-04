@@ -17,10 +17,6 @@ function NavScroll() {
     { id: "hire-us", label: "Hire us" },
   ];
 
-  const handleItemClick = (index: number) => {
-    setActiveIndex(index);
-  };
-
   return (
     <SideNavContainer>
       <SideNav>
@@ -28,7 +24,7 @@ function NavScroll() {
           <ListItem
             key={id}
             className={activeIndex === index ? "is-active" : ""}
-            onClick={() => handleItemClick(index)}
+            onClick={() => setActiveIndex(index)}
           >
             <ListItemTitle>{label}</ListItemTitle>
           </ListItem>
@@ -39,5 +35,3 @@ function NavScroll() {
 }
 
 export default NavScroll;
-
-//  add feature to change pages with scroll
