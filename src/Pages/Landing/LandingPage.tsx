@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Perspective, Container, Wrapper, OuterNavContainer, OuterNav, OuterLi } from "./styles";
 
 import Navbar from "../../components/Navigation/Navbar/Navbar";
@@ -5,13 +6,18 @@ import Home from "../../components/ScrollablePages/Home/index";
 import NavScroll from "../../components/ProgressBar";
 
 function LandingPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-      <Perspective>
+      <Perspective menuOpen={menuOpen}>
           <OuterNavContainer />
-        <Container>
+        <Container menuOpen={menuOpen}>
             <Wrapper>
-              <Navbar />
+              <Navbar toggleMenu={toggleMenu} />
               <NavScroll />
               <Home />
             </Wrapper>

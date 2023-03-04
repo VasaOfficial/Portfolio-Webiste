@@ -3,12 +3,19 @@ import { NavbarContainer, LogoContainer, MenuContainer } from './styles';
 import menuIcon from '../../../assets/menu.png'
 import logo from '../../../assets/logo1.png'
 
-function Navbar() {
+type NavbarProps = {
+  toggleMenu: () => void;
+};
+
+function Navbar({ toggleMenu }: NavbarProps) {
+  const handleMenuClick = () => {
+    toggleMenu();
+  };
+
   return (
     <NavbarContainer>
       <LogoContainer><img src={logo} alt="Logo" /></LogoContainer>
-      <MenuContainer><img src={menuIcon} alt="Menu Icon" />
-      </MenuContainer>
+      <MenuContainer onClick={handleMenuClick}><img src={menuIcon} alt="Menu Icon" /></MenuContainer>
     </NavbarContainer>
   );
 };
