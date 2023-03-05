@@ -12,10 +12,16 @@ function LandingPage() {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
+  };
+
   return (
       <Perspective menuOpen={menuOpen}>
           <OuterNavContainer menuOpen={menuOpen} />
-        <Container menuOpen={menuOpen}>
+        <Container menuOpen={menuOpen} onClick={closeMenu}>
             <Wrapper>
               <Navbar toggleMenu={toggleMenu} />
               <NavScroll />

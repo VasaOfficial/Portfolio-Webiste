@@ -34,6 +34,7 @@ export const Container = styled.div<{ menuOpen: boolean }>`
     transition: transform .4s;
     transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
     box-shadow: 0 0 100px 40px rgba(234, 179, 8, 0.5);
+    cursor: pointer;
   `}
 `;
 
