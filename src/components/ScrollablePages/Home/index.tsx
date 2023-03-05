@@ -35,7 +35,7 @@ const IntroBanner = styled.div`
 const Title = styled.h1`
   position: relative;
   font-size: 68px;
-  font-weight: 900;
+  font-weight: 1000;
   line-height: 1;
   z-index: 1;
   margin-top: -150px;

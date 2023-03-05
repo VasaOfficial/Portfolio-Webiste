@@ -14,7 +14,7 @@ function LandingPage() {
 
   return (
       <Perspective menuOpen={menuOpen}>
-          <OuterNavContainer />
+          <OuterNavContainer menuOpen={menuOpen} />
         <Container menuOpen={menuOpen}>
             <Wrapper>
               <Navbar toggleMenu={toggleMenu} />
@@ -22,12 +22,12 @@ function LandingPage() {
               <Home />
             </Wrapper>
         </Container>
-        <OuterNav>
-          <OuterLi>Home</OuterLi>
-          <OuterLi>Works</OuterLi>
-          <OuterLi>About</OuterLi>
-          <OuterLi>Contact</OuterLi>
-          <OuterLi>Hire-us</OuterLi>
+        <OuterNav menuOpen={menuOpen}>
+          <OuterLi menuOpen={menuOpen}>Home</OuterLi>
+          <OuterLi menuOpen={menuOpen}>Works</OuterLi>
+          <OuterLi menuOpen={menuOpen}>About</OuterLi>
+          <OuterLi menuOpen={menuOpen}>Contact</OuterLi>
+          <OuterLi menuOpen={menuOpen}>Hire-us</OuterLi>
         </OuterNav>
       </Perspective>
   )
