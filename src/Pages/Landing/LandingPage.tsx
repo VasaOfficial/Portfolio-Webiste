@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Perspective, Container, Wrapper, OuterNavContainer, OuterNav, OuterLi } from "./styles";
 
 import Navbar from "../../components/Navigation/Navbar/Navbar";
-import Home from "../../components/ScrollablePages/Home/index";
 import NavScroll from "../../components/ProgressBar";
+import SelectedWork from "../../components/ScrollablePages/Projects"
+// import Home from "../../components/ScrollablePages/Home/index";
 
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +26,8 @@ function LandingPage() {
             <Wrapper>
               <Navbar toggleMenu={toggleMenu} />
               <NavScroll />
-              <Home />
+              <SelectedWork />
+               {/* <Home /> */}
             </Wrapper>
         </Container>
         <OuterNav menuOpen={menuOpen}>
