@@ -54,7 +54,6 @@ export const OuterNavContainer = styled.div<{ menuOpen: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(-50%);
   transform-style: preserve-3d;
   margin: 0;
   padding: 0;
@@ -86,6 +85,7 @@ export const OuterNav = styled.ul<{ menuOpen: boolean }>`
 `
 
 export const OuterLi = styled.li<{ menuOpen: boolean }>`
+  position: relative;
   transform-style: preserve-3d;
   transform: translateX(350px) translateZ(-1000px);
   font-size: 55px;
@@ -99,4 +99,16 @@ export const OuterLi = styled.li<{ menuOpen: boolean }>`
     opacity: 1;
     transition: transform .4s, opacity .4s;
   `}
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 110%;
+    height: 15px;
+    opacity: 1;
+    background-color: #eab308;
+  }
 `
