@@ -26,8 +26,8 @@ function LandingPage() {
             <Wrapper>
               <Navbar toggleMenu={toggleMenu} />
               <NavScroll />
-              <SelectedWork />
-               {/* <Home /> */}
+              <SelectedWork /> 
+             {/* <Home /> */}
             </Wrapper>
         </Container>
         <OuterNav menuOpen={menuOpen}>

@@ -1,126 +1,201 @@
 import styled from 'styled-components';
 
+import rightArrow from '../../../assets/Projects/left.png'
+import leftArrow from '../../../assets/Projects/right.png'
+import leftP from '../../../assets/Projects/leftP.jpg'
+import rightP from '../../../assets/Projects/rightP.jpg'
+import centerP from '../../../assets/Projects/centerP.jpg'
+
 const Section = styled.li`
-  &.l-section {
-    // styles for the "l-section" class
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s ease-in-out, visibility 0s .4s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  &.is-active {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    transition: opacity .4s ease-in-out .4s;
   }
 `;
 
 const Work = styled.div`
-  // styles for the "work" class
+  position: relative;
+  display: flex;
+  width: 960px;
+  max-width: 80%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 `;
 
 const WorkTitle = styled.h2`
-  // styles for the work title
+  margin: 0 0 20px 0;
+  font-size: 30px;
+  text-align: center;
 `;
 
 const WorkLockup = styled.div`
-  // styles for the work lockup
+  position: relative;
 `;
 
 const Slider = styled.ul`
-  // styles for the slider
+  position: relative;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
 `;
 
 const SliderItem = styled.li`
-  // styles for the slider item
+  position: absolute;
+  display: none;
+  text-align: center;
+
+  &.left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: block;
+  }
+
+  &.right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: block;
+  }
+
+  &.center {
+    position: relative
+    top: 30px
+    left: 50%
+    transform: translateX(-50%)
+    display: block
+
+    a {
+      color: #fff;
+    }
+  }
 `;
 
 const SliderItemLink = styled.a`
-  // styles for the slider item link
+  text-decoration: none;
+  color: #858585;
 `;
 
 const SliderItemImage = styled.div`
-  // styles for the slider item image
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
 `;
 
 const SliderItemTitle = styled.p`
-  // styles for the slider item title
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
 `;
 
 const SliderItemDescription = styled.p`
-  // styles for the slider item description
+  display: none;
+  max-width: 250px;
+  margin: 0 auto;
 `;
 
 const SliderPrev = styled.div`
-  // styles for the slider previous button
+  position: absolute;
+  top: 160px;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: #282828;
+  border-radius: 50%;
+  cursor: pointer;
+  right: 0;
+
+  img {
+    width: 20px
+    fill: #fff;
+  }
 `;
 
 const SliderNext = styled.div`
-  // styles for the slider next button
+  position: absolute;
+  top: 160px;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: #282828;
+  border-radius: 50%;
+  cursor: pointer;
+  left: 0;
+
+  img {
+    width: 20px
+    fill: #fff;
+  }
 `;
 
 function SelectedWork() {
   return (
-    <Section className="l-section section">
+    <Section className="is-active">
       <Work className="work">
         <WorkTitle>Selected work</WorkTitle>
-        <WorkLockup className="work--lockup">
-          <Slider className="slider">
-            <SliderItem className="slider--item slider--item-left">
+        <WorkLockup>
+          <Slider>
+            <SliderItem className="left">
               <SliderItemLink href="#0">
-                <SliderItemImage className="slider--item-image">
-                  <img src="assets/img/work-victory.jpg" alt="Victory" />
+                <SliderItemImage>
+                  <img src={leftP} alt="Victory" />
                 </SliderItemImage>
-                <SliderItemTitle className="slider--item-title">Victory</SliderItemTitle>
-                <SliderItemDescription className="slider--item-description">
+                <SliderItemTitle>Victory</SliderItemTitle>
+                <SliderItemDescription>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
                 </SliderItemDescription>
               </SliderItemLink>
             </SliderItem>
-            <SliderItem className="slider--item slider--item-center">
+            <SliderItem className="center">
               <SliderItemLink href="#0">
-                <SliderItemImage className="slider--item-image">
-                  <img src="assets/img/work-metiew-smith.jpg" alt="Metiew and Smith" />
+                <SliderItemImage>
+                  <img src={centerP} alt="Metiew and Smith" />
                 </SliderItemImage>
-                <SliderItemTitle className="slider--item-title">Metiew &amp; Smith</SliderItemTitle>
-                <SliderItemDescription className="slider--item-description">
+                <SliderItemTitle>Metiew &amp; Smith</SliderItemTitle>
+                <SliderItemDescription>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
                 </SliderItemDescription>
               </SliderItemLink>
             </SliderItem>
-            <SliderItem className="slider--item slider--item-right">
+            <SliderItem className="right">
               <SliderItemLink href="#0">
-                <SliderItemImage className="slider--item-image">
-                  <img src="assets/img/work-alex-nowak.jpg" alt="Alex Nowak" />
+                <SliderItemImage>
+                  <img src={rightP} alt="Alex Nowak" />
                 </SliderItemImage>
-                <SliderItemTitle className="slider--item-title">Alex Nowak</SliderItemTitle>
-                <SliderItemDescription className="slider--item-description">
+                <SliderItemTitle>Alex Nowak</SliderItemTitle>
+                <SliderItemDescription>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
                 </SliderItemDescription>
               </SliderItemLink>
             </SliderItem>
           </Slider>
-          <SliderPrev className="slider--prev">
-            <svg
-              version="1.1"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              viewBox="0 0 150 118"
-              xmlSpace="preserve"
-            >
-              <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                <path d="" />
-              </g>
-            </svg>
-          </SliderPrev>
-          <SliderNext className="slider--next">
-            <svg
-              version="1.1"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              viewBox="0 0 150 118"
-              xmlSpace="preserve"
-            >
-              <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                <path d="" />
-              </g>
-            </svg>
-          </SliderNext>
+          <SliderPrev><img src={leftArrow} alt='left' /></SliderPrev>
+          <SliderNext><img src={rightArrow} alt='right' /></SliderNext>
         </WorkLockup>
       </Work>
     </Section>

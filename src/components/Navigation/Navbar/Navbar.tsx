@@ -1,7 +1,7 @@
 import { NavbarContainer, LogoContainer, MenuContainer } from './styles';
 
-import menuIcon from '../../../assets/menu.png'
-import logo from '../../../assets/logo1.png'
+import menuIcon from '../../../assets/Nav/menu.png'
+import logo from '../../../assets/Nav/logo1.png'
 
 type NavbarProps = {
   toggleMenu: () => void;
