@@ -15,7 +15,6 @@ const Section = styled.li`
   height: 100%;
 
   &.is-active {
-    display: none;
     opacity: 1;
     visibility: visible;
     z-index: 1;
@@ -30,18 +29,21 @@ const Work = styled.div`
   max-width: 80%;
   height: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0 auto;
+  padding-top: 100px;
 `;
 
 const WorkTitle = styled.h2`
-  margin: 0 0 20px 0;
+  margin: 0 0 100px 0;
   font-size: 30px;
   text-align: center;
 `;
 
 const WorkLockup = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
 const Slider = styled.ul`
@@ -73,11 +75,11 @@ const SliderItem = styled.li`
   }
 
   &.center {
-    position: relative
-    top: 30px
-    left: 50%
-    transform: translateX(-50%)
-    display: block
+    position: relative;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
 
     a {
       color: #fff;
@@ -99,6 +101,7 @@ const SliderItemImage = styled.div`
 
   img {
     width: 100%;
+    border: 0;
   }
 `;
 
@@ -129,7 +132,7 @@ const SliderPrev = styled.div`
   right: 0;
 
   img {
-    width: 20px
+    width: 20px;
     fill: #fff;
   }
 `;
@@ -148,7 +151,7 @@ const SliderNext = styled.div`
   left: 0;
 
   img {
-    width: 20px
+    width: 20px;
     fill: #fff;
   }
 `;
@@ -156,7 +159,7 @@ const SliderNext = styled.div`
 function SelectedWork() {
   return (
     <Section className="is-active">
-      <Work className="work">
+      <Work>
         <WorkTitle>Selected work</WorkTitle>
         <WorkLockup>
           <Slider>
