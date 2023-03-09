@@ -8,6 +8,7 @@ import SelectedWork from "../../components/ScrollablePages/Projects"
 
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cardCenter, setCardCenter] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -18,6 +19,8 @@ function LandingPage() {
       setMenuOpen(false);
     }
   };
+
+  
 
   return (
       <Perspective menuOpen={menuOpen}>

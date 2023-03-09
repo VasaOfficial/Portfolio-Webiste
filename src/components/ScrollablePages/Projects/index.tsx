@@ -46,6 +46,7 @@ const WorkLockup = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const Slider = styled.ul`
@@ -78,7 +79,7 @@ const SliderItem = styled.li`
 
   &.center {
     position: relative;
-    top: 30px;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
     display: block;
@@ -95,15 +96,15 @@ const SliderItemLink = styled.a`
 `;
 
 const SliderItemImage = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   margin: 0 auto;
-  border-radius: 50%;
   overflow: hidden;
 
   img {
     width: 100%;
     border: 0;
+    border-radius: 50%;
   }
 `;
 
@@ -115,14 +116,12 @@ const SliderItemTitle = styled.p`
 `;
 
 const SliderItemDescription = styled.p`
-  display: none;
   max-width: 250px;
   margin: 0 auto;
 `;
 
 const SliderPrev = styled.div`
   position: absolute;
-  top: 160px;
   display: flex;
   width: 50px;
   height: 50px;
@@ -141,7 +140,6 @@ const SliderPrev = styled.div`
 
 const SliderNext = styled.div`
   position: absolute;
-  top: 160px;
   display: flex;
   width: 50px;
   height: 50px;
@@ -168,9 +166,9 @@ function SelectedWork() {
             <SliderItem className="left">
               <SliderItemLink href="#0">
                 <SliderItemImage>
-                  <img src={leftP} alt="Victory" />
+                  <img src={leftP} alt="Project" />
                 </SliderItemImage>
-                <SliderItemTitle>Victory</SliderItemTitle>
+                <SliderItemTitle>Project</SliderItemTitle>
                 <SliderItemDescription>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
                 </SliderItemDescription>
@@ -181,7 +179,7 @@ function SelectedWork() {
                 <SliderItemImage>
                   <img src={centerP} alt="Metiew and Smith" />
                 </SliderItemImage>
-                <SliderItemTitle>Metiew &amp; Smith</SliderItemTitle>
+                <SliderItemTitle>Project</SliderItemTitle>
                 <SliderItemDescription>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
                 </SliderItemDescription>
@@ -190,9 +188,9 @@ function SelectedWork() {
             <SliderItem className="right">
               <SliderItemLink href="#0">
                 <SliderItemImage>
-                  <img src={rightP} alt="Alex Nowak" />
+                  <img src={rightP} alt="Project" />
                 </SliderItemImage>
-                <SliderItemTitle>Alex Nowak</SliderItemTitle>
+                <SliderItemTitle>Project</SliderItemTitle>
                 <SliderItemDescription>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
                 </SliderItemDescription>
