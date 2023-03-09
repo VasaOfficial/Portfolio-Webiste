@@ -13,12 +13,14 @@ const Section = styled.li`
   position: absolute;
   width: 100%;
   height: 100%;
+  list-style: none;
 
   &.is-active {
     opacity: 1;
     visibility: visible;
     z-index: 1;
     transition: opacity .4s ease-in-out .4s;
+    list-style: none;
   }
 `;
 
