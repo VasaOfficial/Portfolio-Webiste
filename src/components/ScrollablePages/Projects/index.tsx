@@ -32,34 +32,43 @@ const projects: Project[] = [
 ]
 
 function SelectedWork() {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number>(1);
 
   const handleSliderPrev = () => {
     setActiveIndex(activeIndex === 0 ? projects.length - 1 : activeIndex - 1)
   }
 
   const handleSliderNext = () => {
-    setActiveIndex(activeIndex === projects.length - 1 ? 0 : activeIndex + 1);
-  };
+    setActiveIndex(activeIndex === projects.length - 1 ? 0 : activeIndex + 1)
+  }
 
   const getSliderItemClass = (index: number) => {
+    const middleIndex = Math.floor(projects.length / 2)
     if (index === activeIndex) {
-      return 'center';
+      return 'center'
     }
     if (index < activeIndex) {
-      return 'left';
+      return index >= middleIndex ? 'left' : 'right'
     }
-    return 'right';
-  };
+    return index <= middleIndex ? 'right' : 'left'
+  }
+
+  const handleSliderItemClick = (index: number) => {
+    setActiveIndex(index)
+  }
 
   return (
     <Section className="is-active">
       <ProjectContainer>
         <ProjectTitle>Selected Projects</ProjectTitle>
         <ProjectLockup>
-          <Slider>
-          {projects.map((project, index) => (
-              <SliderItem className={getSliderItemClass(index)} key={project.title}>
+        <Slider>
+            {projects.map((project, index) => (
+              <SliderItem
+                className={getSliderItemClass(index)}
+                key={project.title}
+                onClick={() => handleSliderItemClick(index)}
+              >
                 <SliderItemLink href="#0">
                   <SliderItemImage>
                     <img src={project.image} alt={project.title} />

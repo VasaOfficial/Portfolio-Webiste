@@ -50,46 +50,35 @@ export const Slider = styled.ul`
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  justify-content: center;
 `;
 
 export const SliderItem = styled.li`
-  position: absolute;
-  display: none;
-  text-align: center;
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+width: 300px;
+height: 400px;
+margin: 0 10px;
 
   &.left {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: block;
-
     img {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
     }
   }
 
   &.right {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: block;
-
     img {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
     }
   }
 
   &.center {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 300px;
-    height: 400px;
-
     a {
       color: #fff;
     }
