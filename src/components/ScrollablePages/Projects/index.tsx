@@ -24,10 +24,10 @@ const Section = styled.li`
   }
 `;
 
-const Work = styled.div`
+const Project = styled.div`
   position: relative;
   display: flex;
-  width: 960px;
+  width: 1200px;
   max-width: 80%;
   height: 100%;
   flex-direction: column;
@@ -36,13 +36,13 @@ const Work = styled.div`
   padding-top: 100px;
 `;
 
-const WorkTitle = styled.h2`
-  margin: 0 0 100px 0;
+const ProjectTitle = styled.h2`
+  margin: 0 0 50px 0;
   font-size: 30px;
   text-align: center;
 `;
 
-const WorkLockup = styled.div`
+const ProjectLockup = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -68,6 +68,11 @@ const SliderItem = styled.li`
     left: 0;
     transform: translateY(-50%);
     display: block;
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   &.right {
@@ -75,6 +80,11 @@ const SliderItem = styled.li`
     right: 0;
     transform: translateY(-50%);
     display: block;
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   &.center {
@@ -83,11 +93,22 @@ const SliderItem = styled.li`
     left: 50%;
     transform: translateX(-50%);
     display: block;
+    width: 300px;
+    height: 400px;
 
     a {
       color: #fff;
     }
-  }
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+
+    p {
+      font-size: 18px;
+      padding-top 10px;
+    }
 `;
 
 const SliderItemLink = styled.a`
@@ -96,8 +117,6 @@ const SliderItemLink = styled.a`
 `;
 
 const SliderItemImage = styled.div`
-  width: 250px;
-  height: 250px;
   margin: 0 auto;
   overflow: hidden;
 
@@ -159,9 +178,9 @@ const SliderNext = styled.div`
 function SelectedWork() {
   return (
     <Section className="is-active">
-      <Work>
-        <WorkTitle>Selected work</WorkTitle>
-        <WorkLockup>
+      <Project>
+        <ProjectTitle>Selected Projects</ProjectTitle>
+        <ProjectLockup>
           <Slider>
             <SliderItem className="left">
               <SliderItemLink href="#0">
@@ -199,8 +218,8 @@ function SelectedWork() {
           </Slider>
           <SliderPrev><img src={leftArrow} alt='left' /></SliderPrev>
           <SliderNext><img src={rightArrow} alt='right' /></SliderNext>
-        </WorkLockup>
-      </Work>
+        </ProjectLockup>
+      </Project>
     </Section>
   )
 }
