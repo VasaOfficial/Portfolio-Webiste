@@ -1,225 +1,79 @@
-import styled from 'styled-components';
+import { useState } from 'react' 
 
+import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemLink, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev } from './style'
 import rightArrow from '../../../assets/Projects/left.png'
 import leftArrow from '../../../assets/Projects/right.png'
 import leftP from '../../../assets/Projects/leftP.jpg'
 import rightP from '../../../assets/Projects/rightP.jpg'
 import centerP from '../../../assets/Projects/centerP.jpg'
 
-const Section = styled.li`
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .4s ease-in-out, visibility 0s .4s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  list-style: none;
+type Project = {
+  title: string;
+  image: string;
+  description: string;
+}
 
-  &.is-active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-    transition: opacity .4s ease-in-out .4s;
-    list-style: none;
-  }
-`;
-
-const Project = styled.div`
-  position: relative;
-  display: flex;
-  width: 1200px;
-  max-width: 80%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 0 auto;
-  padding-top: 100px;
-`;
-
-const ProjectTitle = styled.h2`
-  margin: 0 0 50px 0;
-  font-size: 30px;
-  text-align: center;
-`;
-
-const ProjectLockup = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Slider = styled.ul`
-  position: relative;
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-`;
-
-const SliderItem = styled.li`
-  position: absolute;
-  display: none;
-  text-align: center;
-
-  &.left {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: block;
-
-    img {
-      width: 200px;
-      height: 200px;
-    }
-  }
-
-  &.right {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: block;
-
-    img {
-      width: 200px;
-      height: 200px;
-    }
-  }
-
-  &.center {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 300px;
-    height: 400px;
-
-    a {
-      color: #fff;
-    }
-
-    img {
-      width: 300px;
-      height: 300px;
-    }
-
-    p {
-      font-size: 18px;
-      padding-top 10px;
-    }
-`;
-
-const SliderItemLink = styled.a`
-  text-decoration: none;
-  color: #858585;
-`;
-
-const SliderItemImage = styled.div`
-  margin: 0 auto;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    border: 0;
-    border-radius: 50%;
-  }
-`;
-
-const SliderItemTitle = styled.p`
-  margin-top: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-`;
-
-const SliderItemDescription = styled.p`
-  max-width: 250px;
-  margin: 0 auto;
-`;
-
-const SliderPrev = styled.div`
-  position: absolute;
-  display: flex;
-  width: 50px;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: #282828;
-  border-radius: 50%;
-  cursor: pointer;
-  right: 0;
-
-  img {
-    width: 20px;
-    fill: #fff;
-  }
-`;
-
-const SliderNext = styled.div`
-  position: absolute;
-  display: flex;
-  width: 50px;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: #282828;
-  border-radius: 50%;
-  cursor: pointer;
-  left: 0;
-
-  img {
-    width: 20px;
-    fill: #fff;
-  }
-`;
+const projects: Project[] = [
+  {
+    title: 'Project 1',
+    image: `${leftP}`,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
+  },
+  {
+    title: 'Project 2',
+    image: `${centerP}`,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
+  },
+  {
+    title: 'Project 3',
+    image: `${rightP}`,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
+  },
+]
 
 function SelectedWork() {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const handleSliderPrev = () => {
+    setActiveIndex(activeIndex === 0 ? projects.length - 1 : activeIndex - 1)
+  }
+
+  const handleSliderNext = () => {
+    setActiveIndex(activeIndex === projects.length - 1 ? 0 : activeIndex + 1);
+  };
+
+  const getSliderItemClass = (index: number) => {
+    if (index === activeIndex) {
+      return 'center';
+    }
+    if (index < activeIndex) {
+      return 'left';
+    }
+    return 'right';
+  };
+
   return (
     <Section className="is-active">
-      <Project>
+      <ProjectContainer>
         <ProjectTitle>Selected Projects</ProjectTitle>
         <ProjectLockup>
           <Slider>
-            <SliderItem className="left">
-              <SliderItemLink href="#0">
-                <SliderItemImage>
-                  <img src={leftP} alt="Project" />
-                </SliderItemImage>
-                <SliderItemTitle>Project</SliderItemTitle>
-                <SliderItemDescription>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
-                </SliderItemDescription>
-              </SliderItemLink>
-            </SliderItem>
-            <SliderItem className="center">
-              <SliderItemLink href="#0">
-                <SliderItemImage>
-                  <img src={centerP} alt="Metiew and Smith" />
-                </SliderItemImage>
-                <SliderItemTitle>Project</SliderItemTitle>
-                <SliderItemDescription>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
-                </SliderItemDescription>
-              </SliderItemLink>
-            </SliderItem>
-            <SliderItem className="right">
-              <SliderItemLink href="#0">
-                <SliderItemImage>
-                  <img src={rightP} alt="Project" />
-                </SliderItemImage>
-                <SliderItemTitle>Project</SliderItemTitle>
-                <SliderItemDescription>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
-                </SliderItemDescription>
-              </SliderItemLink>
-            </SliderItem>
+          {projects.map((project, index) => (
+              <SliderItem className={getSliderItemClass(index)} key={project.title}>
+                <SliderItemLink href="#0">
+                  <SliderItemImage>
+                    <img src={project.image} alt={project.title} />
+                  </SliderItemImage>
+                  <SliderItemTitle>{project.title}</SliderItemTitle>
+                  <SliderItemDescription>{project.description}</SliderItemDescription>
+                </SliderItemLink>
+              </SliderItem>
+            ))}
           </Slider>
-          <SliderPrev><img src={leftArrow} alt='left' /></SliderPrev>
-          <SliderNext><img src={rightArrow} alt='right' /></SliderNext>
+          <SliderPrev onClick={handleSliderPrev}><img src={leftArrow} alt='left' /></SliderPrev>
+          <SliderNext onClick={handleSliderNext}><img src={rightArrow} alt='right' /></SliderNext>
         </ProjectLockup>
-      </Project>
+      </ProjectContainer>
     </Section>
   )
 }
