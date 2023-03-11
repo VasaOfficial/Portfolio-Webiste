@@ -117,7 +117,8 @@ export const SliderItemTitle = styled.p`
   text-transform: uppercase;
 `;
 
-export const SliderItemDescription = styled.p`
+export const SliderItemDescription = styled.p<{ parentClass: string }>`
+  display: ${(props) => (props.parentClass === "center" ? "block" : "none")};
   max-width: 250px;
   margin: 0 auto;
 `;

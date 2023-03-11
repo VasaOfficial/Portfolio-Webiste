@@ -33,25 +33,37 @@ const projects: Project[] = [
 
 function SelectedWork() {
   const [activeIndex, setActiveIndex] = useState<number>(1);
+  const [sliderPosition] = useState<number>(1);
 
   const handleSliderPrev = () => {
     setActiveIndex(activeIndex === 0 ? projects.length - 1 : activeIndex - 1)
+    const lastProject = projects[projects.length - 1]
+    const newProjects = [
+      lastProject,
+      ...projects.slice(0, projects.length - 1),
+    ]
+    projects.splice(0, projects.length, ...newProjects)
   }
 
   const handleSliderNext = () => {
     setActiveIndex(activeIndex === projects.length - 1 ? 0 : activeIndex + 1)
+    const firstProject = projects[0]
+    const newProjects = [
+      ...projects.slice(1, projects.length),
+      firstProject,
+    ]
+    projects.splice(0, projects.length, ...newProjects)
   }
 
   const getSliderItemClass = (index: number) => {
-    const middleIndex = Math.floor(projects.length / 2)
-    if (index === activeIndex) {
-      return 'center'
-    }
-    if (index < activeIndex) {
-      return index >= middleIndex ? 'left' : 'right'
-    }
-    return index <= middleIndex ? 'right' : 'left'
-  }
+    if (index === 0) {
+      return 'left';
+    } if (index === projects.length - 1) {
+      return 'right';
+    } 
+      return 'center';
+    
+  };
 
   const handleSliderItemClick = (index: number) => {
     setActiveIndex(index)
@@ -69,12 +81,12 @@ function SelectedWork() {
                 key={project.title}
                 onClick={() => handleSliderItemClick(index)}
               >
-                <SliderItemLink href="#0">
+                <SliderItemLink href="#0" >
                   <SliderItemImage>
                     <img src={project.image} alt={project.title} />
                   </SliderItemImage>
                   <SliderItemTitle>{project.title}</SliderItemTitle>
-                  <SliderItemDescription>{project.description}</SliderItemDescription>
+                  <SliderItemDescription parentClass={sliderPosition === index ? "center" : ""}>{project.description}</SliderItemDescription>
                 </SliderItemLink>
               </SliderItem>
             ))}
