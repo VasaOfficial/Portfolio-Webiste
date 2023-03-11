@@ -1,4 +1,4 @@
-import { useState } from 'react' 
+import { useState, useEffect } from 'react' 
 
 import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemLink, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev } from './style'
 import rightArrow from '../../../assets/Projects/left.png'
@@ -34,13 +34,12 @@ const projects: Project[] = [
 function SelectedWork() {
   const [activeIndex, setActiveIndex] = useState<number>(1);
   const [sliderPosition] = useState<number>(1);
+  const [slideAnimation, setSlideAnimation] = useState(false);
 
   const handleSliderPrev = () => {
     setActiveIndex(activeIndex === 0 ? projects.length - 1 : activeIndex - 1)
     const lastProject = projects[projects.length - 1]
-    const newProjects = [
-      lastProject,
-      ...projects.slice(0, projects.length - 1),
+    const newProjects = [ lastProject, ...projects.slice(0, projects.length - 1),
     ]
     projects.splice(0, projects.length, ...newProjects)
   }
@@ -48,12 +47,16 @@ function SelectedWork() {
   const handleSliderNext = () => {
     setActiveIndex(activeIndex === projects.length - 1 ? 0 : activeIndex + 1)
     const firstProject = projects[0]
-    const newProjects = [
-      ...projects.slice(1, projects.length),
+    const newProjects = [ ...projects.slice(1, projects.length),
       firstProject,
     ]
     projects.splice(0, projects.length, ...newProjects)
   }
+
+  useEffect(() => {
+    setSlideAnimation(true);
+    setTimeout(() => setSlideAnimation(false), 1000);
+  }, [activeIndex]);
 
   const getSliderItemClass = (index: number) => {
     if (index === 0) {
@@ -65,21 +68,16 @@ function SelectedWork() {
     
   };
 
-  const handleSliderItemClick = (index: number) => {
-    setActiveIndex(index)
-  }
-
   return (
     <Section className="is-active">
       <ProjectContainer>
         <ProjectTitle>Selected Projects</ProjectTitle>
         <ProjectLockup>
-        <Slider>
+        <Slider slideAnimation={slideAnimation}>
             {projects.map((project, index) => (
               <SliderItem
                 className={getSliderItemClass(index)}
                 key={project.title}
-                onClick={() => handleSliderItemClick(index)}
               >
                 <SliderItemLink href="#0" >
                   <SliderItemImage>

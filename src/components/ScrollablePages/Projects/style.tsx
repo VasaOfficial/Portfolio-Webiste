@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const slideAnimation = keyframes`
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 
 export const Section = styled.li`
   opacity: 0;
@@ -43,7 +56,7 @@ export const ProjectLockup = styled.div`
   align-items: center;
 `;
 
-export const Slider = styled.ul`
+export const Slider = styled.ul<{ slideAnimation: boolean }>`
   position: relative;
   display: flex;
   width: 80%;
@@ -51,6 +64,7 @@ export const Slider = styled.ul`
   padding: 0;
   list-style: none;
   justify-content: center;
+  animation: ${props => props.slideAnimation ? slideAnimation : "none"} 1s ease-in-out;
 `;
 
 export const SliderItem = styled.li`
