@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Augustus from '../../../assets/augustus.png'
+import Augustus from '../../../assets/Home/augustus.png'
 
 const Section = styled.li`
   width: 100%;
@@ -48,8 +48,22 @@ const Button = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   background-color: white;
-  border: none;
   cursor: pointer;
+  color: #ffa260;
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em #e5ff60;
+    transform: translateY(-0.25em);
+    color: #eab308;
+  }
 `;
 
 const Img = styled.img`

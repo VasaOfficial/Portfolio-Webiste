@@ -11,7 +11,7 @@ function NavScroll() {
 
   const navItems: NavItem[] = [
     { id: "home", label: "Home" },
-    { id: "works", label: "Works" },
+    { id: "projects", label: "Projects" },
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
     { id: "hire-us", label: "Hire us" },

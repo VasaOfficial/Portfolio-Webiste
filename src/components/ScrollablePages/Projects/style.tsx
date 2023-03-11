@@ -40,11 +40,11 @@ export const ProjectContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 80px;
 `;
 
 export const ProjectTitle = styled.h2`
-  margin: 0 0 50px 0;
+  margin: 0 0 100px 0;
   font-size: 30px;
   text-align: center;
 `;
