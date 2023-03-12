@@ -20,8 +20,6 @@ function LandingPage() {
     }
   };
 
-  
-
   return (
       <Perspective menuOpen={menuOpen}>
           <OuterNavContainer menuOpen={menuOpen} />

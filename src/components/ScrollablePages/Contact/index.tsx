@@ -14,7 +14,6 @@ const Section = styled.li`
   &.is-active {
     opacity: 1;
     visibility: visible;
-    z-index: 1;
     transition: opacity .4s ease-in-out .4s;
     list-style: none;
   }
@@ -30,6 +29,7 @@ const ContactContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   &::before {
     content: "";
     position: absolute;
@@ -37,12 +37,11 @@ const ContactContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom , rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.8) 100%),
-                linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom, rgba(12,12,12,1) 0%, rgba(12,12,12,0.8) 25%, rgba(12,12,12,0.3) 50%, rgba(12,12,12,0.6) 75%, rgba(12,12,12,0.8) 100%),
+            linear-gradient(to left, rgba(12,12,12,0.8) 0%, rgba(12,12,12,0.6) 25%, rgba(12,12,12,0.3) 50%, rgba(12,12,12,0.6) 75%, rgba(12,12,12,0.8) 100%);
     z-index: -1;
   }
 `;
-
 
 const ContactLockup = styled.div`
   position: relative;

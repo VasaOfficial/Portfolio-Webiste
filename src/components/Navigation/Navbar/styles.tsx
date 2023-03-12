@@ -6,11 +6,11 @@ export const NavbarContainer = styled.nav`
   max-width: 85%;
   width: 85%;
   height: 70px;
-  background-color: #0c0c0c;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
+  z-index: 2;
 `;
 
 export const LogoContainer = styled.div`
