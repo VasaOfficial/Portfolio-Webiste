@@ -60,6 +60,10 @@ const ModalContainer = styled.div`
   text-align: center;
   background-color: black;
   box-shadow: 0 0 30px 0 rgba(0,0,0,.75);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const ModalInformation = styled.div`

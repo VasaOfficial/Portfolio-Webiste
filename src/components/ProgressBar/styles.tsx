@@ -17,7 +17,7 @@ export const SideNavContainer = styled.nav`
     height: 70%;
     max-height: 750px;
     background-color: #555;
-    opacity: 0.35;
+    opacity: 0.50;
     z-index: 10;
   }
 `;
@@ -42,7 +42,7 @@ export const ListItem = styled.li`
   color: #fff;
   cursor: pointer;
   font-size: 10px;
-  opacity: 0.2;
+  opacity: 0.4;
   transition: font-size 0.4s ease-in-out, opacity 0.4s ease-in-out;
 
   &.is-active {
