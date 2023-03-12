@@ -58,9 +58,8 @@ const Button = styled.button`
   margin: 0.5em;
   padding: 1em 2em;
 
-  &:hover,
-  &:focus {
-    box-shadow: 0 0.5em 0.5em -0.4em #e5ff60;
+  &:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #eab308;
     transform: translateY(-0.25em);
     color: #eab308;
   }
