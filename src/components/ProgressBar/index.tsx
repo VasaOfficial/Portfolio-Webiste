@@ -14,7 +14,6 @@ function NavScroll() {
     { id: "projects", label: "Projects" },
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
-    { id: "hire-us", label: "Hire us" },
   ];
 
   return (

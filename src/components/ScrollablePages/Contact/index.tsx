@@ -4,7 +4,6 @@ import louvre from '../../../assets/Contact/louvre.avif'
 const Section = styled.li`
   position: absolute;
   list-style: none;
-  position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -100,9 +99,9 @@ const ModalOptionLink = styled.a`
   font-weight: 700;
 `;
 
-function ContactSection() {
+function Contact() {
   return (
-    <Section className="is-active">
+    <Section id='section-3'>
       <ContactContainer>
         <ContactLockup>
           <ModalContainer>
@@ -129,4 +128,4 @@ function ContactSection() {
   );
 }
 
-export default ContactSection;
+export default Contact;

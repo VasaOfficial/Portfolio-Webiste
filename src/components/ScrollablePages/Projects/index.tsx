@@ -31,7 +31,7 @@ const projects: Project[] = [
   },
 ]
 
-function SelectedWork() {
+function Projects() {
   const [activeIndex, setActiveIndex] = useState<number>(1);
   const [sliderPosition] = useState<number>(1);
   const [slideAnimation, setSlideAnimation] = useState(false);
@@ -69,7 +69,7 @@ function SelectedWork() {
   };
 
   return (
-    <Section className="is-active">
+    <Section id='section-2'>
       <ProjectContainer>
         <ProjectTitle>Selected Projects</ProjectTitle>
         <ProjectLockup>
@@ -97,4 +97,4 @@ function SelectedWork() {
   )
 }
 
-export default SelectedWork;
+export default Projects;
