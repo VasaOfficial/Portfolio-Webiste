@@ -16,28 +16,28 @@ function LandingPage() {
       document.getElementById("section-2"),
       document.getElementById("section-3"),
     ];
-
-    let currentIndex = 0;
-
-  const handleClick = () => {
-    sections[currentIndex]?.classList.remove("is-active");
-    currentIndex = (currentIndex + 1) % sections.length;
-    sections[currentIndex]?.classList.add("is-active");
-  };
-
-  sections[currentIndex]?.classList.add("is-active");
-  sections.forEach((section) => {
-    section?.addEventListener("click", handleClick);
-  });
-
-  return () => {
-    sections.forEach((section) => {
-      section?.removeEventListener("click", handleClick);
-    });
-  };
-}, []);
   
-
+    let currentIndex = 0;
+  
+    const handleWheel = (event: WheelEvent) => {
+      const delta = Math.sign(event.deltaY);
+      sections[currentIndex]?.classList.remove("is-active");
+      currentIndex = (currentIndex + delta + sections.length) % sections.length;
+      sections[currentIndex]?.classList.add("is-active");
+    };
+  
+    sections[currentIndex]?.classList.add("is-active");
+    sections.forEach((section) => {
+      section?.addEventListener("wheel", handleWheel);
+    });
+  
+    return () => {
+      sections.forEach((section) => {
+        section?.removeEventListener("wheel", handleWheel);
+      });
+    };
+  }, []);
+  
   // opening/closing navbar menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
