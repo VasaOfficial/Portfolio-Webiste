@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SideNavContainer, SideNav, ListItem, ListItemTitle } from "./styles";
 
 interface NavItem {
@@ -16,14 +16,35 @@ function NavScroll() {
     { id: "contact", label: "Contact" },
   ];
 
+  const handleItemClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  useEffect(() => {
+    const handleWindowWheel = (event: WheelEvent) => {
+      if (event.deltaY > 0) {
+        setActiveIndex(Math.min(activeIndex + 1, navItems.length - 1));
+      } else if (event.deltaY < 0) {
+        setActiveIndex(Math.max(activeIndex - 1, 0));
+      }
+    };
+  
+    window.addEventListener('wheel', handleWindowWheel);
+  
+    return () => {
+      window.removeEventListener('wheel', handleWindowWheel);
+    };
+  }, [activeIndex, navItems.length]);
+  
+
   return (
     <SideNavContainer>
       <SideNav>
-      {navItems.map(({ id, label }, index) => (
+        {navItems.map(({ id, label }, index) => (
           <ListItem
             key={id}
             className={activeIndex === index ? "is-active" : ""}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => handleItemClick(index)}
           >
             <ListItemTitle>{label}</ListItemTitle>
           </ListItem>
