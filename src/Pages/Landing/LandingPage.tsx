@@ -75,8 +75,7 @@ function LandingPage() {
         </Container>
         <OuterNav menuOpen={menuOpen}>
           <OuterLi menuOpen={menuOpen}>Home</OuterLi>
-          <OuterLi menuOpen={menuOpen}>Works</OuterLi>
-          <OuterLi menuOpen={menuOpen}>About</OuterLi>
+          <OuterLi menuOpen={menuOpen}>Projects</OuterLi>
           <OuterLi menuOpen={menuOpen}>Contact</OuterLi>
         </OuterNav>
       </Perspective>
