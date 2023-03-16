@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import styled from "styled-components";
 import Augustus from '../../../assets/Home/augustus.png'
 
@@ -92,7 +94,7 @@ const IntroOptions = styled.div`
   padding: 0;
   list-style: none;
 
-  a {
+  div {
     max-width: 250px;
     text-decoration: none;
     color: gray;
@@ -114,36 +116,49 @@ const IntroOptions = styled.div`
 `;
 
 function Home() {
+
+  const handleClick = () => {
+    const section1 = document.getElementById("section-1");
+    const section3 = document.getElementById("section-3");
+    if (section1 !== null) {
+      section1.classList.remove("is-active");
+    }
+    if (section3 !== null) {
+      section3.classList.add("is-active");
+    }
+  };
+  
+
   return (
     <Section className="is-active" id="section-1">
       <Intro>
         <IntroBanner>
           <Title>Hello<br />I&apos;m Vasa<br /></Title>
-          <Button>Contact</Button>
+          <Button onClick={handleClick}>Contact</Button>
           <Img src={Augustus} />
         </IntroBanner>
         <IntroOptions>
-          <a href="#0">
-            <h3>Metiew &amp; Smith</h3>
+          <div>
+            <h3>Lorem ipsum</h3>
              <p>
                Lorem ipsum dolor sit amet, consectetur adipisicing elit
                sed do.
              </p>
-          </a>
-          <a href="#0">
-            <h3>Fantasy interactive</h3>
+          </div>
+          <div>
+            <h3>Lorem ipsum</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit
                 sed do.
               </p>
-          </a>
-          <a href="#0">
-             <h3>Paul &amp; shark</h3>
+          </div>
+          <div>
+             <h3>Lorem ipsum</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit
                   sed do.
                 </p>
-          </a>
+          </div>
         </IntroOptions>
       </Intro>
     </Section>
