@@ -16,33 +16,40 @@ function NavScroll() {
   ];
 
   // changes the pages on click based on the name
-  const handleItemClick = (index: number) => {
-    setActiveIndex(index);
-  
+  const removeActiveClass = () => {
     const section1 = document.getElementById("section-1");
     const section2 = document.getElementById("section-2");
     const section3 = document.getElementById("section-3");
   
+    section1?.classList.remove("is-active");
+    section2?.classList.remove("is-active");
+    section3?.classList.remove("is-active");
+  };
+  
+  const addActiveClass = (index: number) => {
+    const section = document.getElementById(`section-${index + 1}`);
+    section?.classList.add("is-active");
+  };
+  
+  const handleItemClick = (index: number) => {
+    setActiveIndex(index);
+  
+    removeActiveClass();
+  
     switch (navItems[index].id) {
       case "home":
-        section1?.classList.add("is-active");
-        section2?.classList.remove("is-active");
-        section3?.classList.remove("is-active");
+        addActiveClass(0);
         break;
       case "projects":
-        section1?.classList.remove("is-active");
-        section2?.classList.add("is-active");
-        section3?.classList.remove("is-active");
+        addActiveClass(1);
         break;
       case "contact":
-        section1?.classList.remove("is-active");
-        section2?.classList.remove("is-active");
-        section3?.classList.add("is-active");
+        addActiveClass(2);
         break;
       default:
         break;
     }
-  };  
+  };    
 
   useEffect(() => {
     const handleWindowWheel = (event: WheelEvent) => {
