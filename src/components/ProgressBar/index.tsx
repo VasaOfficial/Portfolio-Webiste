@@ -15,9 +15,34 @@ function NavScroll() {
     { id: "contact", label: "Contact" },
   ];
 
+  // changes the pages on click based on the name
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
-  };
+  
+    const section1 = document.getElementById("section-1");
+    const section2 = document.getElementById("section-2");
+    const section3 = document.getElementById("section-3");
+  
+    switch (navItems[index].id) {
+      case "home":
+        section1?.classList.add("is-active");
+        section2?.classList.remove("is-active");
+        section3?.classList.remove("is-active");
+        break;
+      case "projects":
+        section1?.classList.remove("is-active");
+        section2?.classList.add("is-active");
+        section3?.classList.remove("is-active");
+        break;
+      case "contact":
+        section1?.classList.remove("is-active");
+        section2?.classList.remove("is-active");
+        section3?.classList.add("is-active");
+        break;
+      default:
+        break;
+    }
+  };  
 
   useEffect(() => {
     const handleWindowWheel = (event: WheelEvent) => {

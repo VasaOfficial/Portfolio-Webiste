@@ -49,7 +49,6 @@ function LandingPage() {
     };
   }, []);
   
-  
   // opening/closing navbar menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -70,7 +69,7 @@ function LandingPage() {
               <NavScroll />
               <Home /> 
               <Projects /> 
-              <Contact/> 
+              <Contact /> 
             </Wrapper>
         </Container>
         <OuterNav menuOpen={menuOpen}>
