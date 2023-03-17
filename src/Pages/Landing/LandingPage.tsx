@@ -9,6 +9,21 @@ import Contact from "../../components/ScrollablePages/Contact";
 
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeFromButton, setActiveFromButton] = useState(false);
+  
+  // Home button function
+  const handleClick = () => {
+    const section1 = document.getElementById("section-1");
+    const section3 = document.getElementById("section-3");
+  
+    if (section1 !== null) {
+      section1.classList.remove("is-active");
+    }
+    if (section3 !== null) {
+      section3.classList.add("is-active");
+    }
+    setActiveFromButton(true);
+  }; 
   
   // changing pages on scroll
   useEffect(() => {
@@ -66,8 +81,8 @@ function LandingPage() {
         <Container menuOpen={menuOpen} onClick={closeMenu}>
             <Wrapper>
               <Navbar toggleMenu={toggleMenu} />
-              <NavScroll />
-              <Home /> 
+              <NavScroll activeFromButton={activeFromButton} />
+              <Home  handleClick={handleClick}/> 
               <Projects /> 
               <Contact /> 
             </Wrapper>

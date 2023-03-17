@@ -113,20 +113,7 @@ const IntroOptions = styled.div`
   }
 `;
 
-function Home() {
-
-  const handleClick = () => {
-    const section1 = document.getElementById("section-1");
-    const section3 = document.getElementById("section-3");
-    if (section1 !== null) {
-      section1.classList.remove("is-active");
-    }
-    if (section3 !== null) {
-      section3.classList.add("is-active");
-    }
-  };
-  
-
+function Home({ handleClick }: { handleClick: () => void }) {
   return (
     <Section className="is-active" id="section-1">
       <Intro>

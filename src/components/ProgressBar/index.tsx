@@ -6,8 +6,9 @@ interface NavItem {
   id: string;
 }
 
-function NavScroll() {
+function NavScroll({ activeFromButton }: { activeFromButton: boolean }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  
 
   const navItems: NavItem[] = [
     { id: "home", label: "Home" },
@@ -67,14 +68,13 @@ function NavScroll() {
     };
   }, [activeIndex, navItems.length]);
   
-
   return (
     <SideNavContainer>
       <SideNav>
         {navItems.map(({ id, label }, index) => (
           <ListItem
             key={id}
-            className={activeIndex === index ? "is-active" : ""}
+            className={activeIndex === index || (activeFromButton && id === 'contact') ? "is-active" : ""}
             onClick={() => handleItemClick(index)}
           >
             <ListItemTitle>{label}</ListItemTitle>
