@@ -100,7 +100,7 @@ export const OuterLi = styled.li<{ menuOpen: boolean }>`
     transition: transform .4s, opacity .4s;
   `}
 
-  &::before {
+  &:first-child::before {
     content: "";
     position: absolute;
     top: 50%;
