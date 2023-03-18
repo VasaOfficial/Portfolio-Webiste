@@ -6,15 +6,19 @@ interface NavItem {
   id: string;
 }
 
-function NavScroll({ activeFromButton }: { activeFromButton: boolean }) {
+function NavScroll({ activeFromButton, setActiveFromButton }: { activeFromButton: boolean, setActiveFromButton: (value: boolean) => void }) {
   const [activeIndex, setActiveIndex] = useState(0);
   
-
   const navItems: NavItem[] = [
     { id: "home", label: "Home" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];
+  
+  const addActiveClass = (index: number) => {
+    const section = document.getElementById(`section-${index + 1}`);
+    section?.classList.add("is-active");
+  };
 
   // changes the pages on click based on the name
   const removeActiveClass = () => {
@@ -27,14 +31,8 @@ function NavScroll({ activeFromButton }: { activeFromButton: boolean }) {
     section3?.classList.remove("is-active");
   };
   
-  const addActiveClass = (index: number) => {
-    const section = document.getElementById(`section-${index + 1}`);
-    section?.classList.add("is-active");
-  };
-  
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
-  
     removeActiveClass();
   
     switch (navItems[index].id) {
@@ -50,7 +48,11 @@ function NavScroll({ activeFromButton }: { activeFromButton: boolean }) {
       default:
         break;
     }
-  };    
+
+    if (activeFromButton) {
+      setActiveFromButton(false);
+    }
+  };  
 
   useEffect(() => {
     const handleWindowWheel = (event: WheelEvent) => {
@@ -74,7 +76,7 @@ function NavScroll({ activeFromButton }: { activeFromButton: boolean }) {
         {navItems.map(({ id, label }, index) => (
           <ListItem
             key={id}
-            className={activeIndex === index || (activeFromButton && id === 'contact') ? "is-active" : ""}
+            className={activeIndex === index && !activeFromButton || (activeFromButton && id === 'contact') ? "is-active" : ""}
             onClick={() => handleItemClick(index)}
           >
             <ListItemTitle>{label}</ListItemTitle>

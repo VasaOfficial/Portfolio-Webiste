@@ -81,7 +81,7 @@ function LandingPage() {
         <Container menuOpen={menuOpen} onClick={closeMenu}>
             <Wrapper>
               <Navbar toggleMenu={toggleMenu} />
-              <NavScroll activeFromButton={activeFromButton} />
+              <NavScroll activeFromButton={activeFromButton} setActiveFromButton={setActiveFromButton} />
               <Home  handleClick={handleClick}/> 
               <Projects /> 
               <Contact /> 
