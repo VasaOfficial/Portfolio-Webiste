@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Perspective, Container, Wrapper, OuterNavContainer, OuterNav, OuterLi } from "./styles";
 
-import Navbar from "../../components/Navigation/Navbar/Navbar";
-import NavScroll from "../../components/ProgressBar";
-import Home from "../../components/ScrollablePages/Home/index";
-import Projects from "../../components/ScrollablePages/Projects"
-import Contact from "../../components/ScrollablePages/Contact";
+import Navbar from "../components/Navigation/Navbar/Navbar";
+import NavScroll from "../components/ProgressBar";
+import Home from "../components/ScrollablePages/Home/index";
+import Projects from "../components/ScrollablePages/Projects"
+import Contact from "../components/ScrollablePages/Contact";
 
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);

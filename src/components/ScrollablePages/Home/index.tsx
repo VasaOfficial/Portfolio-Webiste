@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Augustus from '../../../assets/Home/augustus.png'
+
+const shine = keyframes`
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 600px;
+  }
+  100% {
+    background-position: 600px;
+  }
+`;
 
 const Section = styled.li`
   position: absolute;
@@ -23,7 +35,7 @@ const Section = styled.li`
 const Intro = styled.div`
   display: flex;
   max-width: 85%;
-  width: 55%;
+  width: 65%;
   height: 100%;
   flex-direction: column;
   justify-content: center;
@@ -47,13 +59,29 @@ const IntroBanner = styled.div`
 
 const Title = styled.h1`
   position: relative;
-  font-size: 68px;
+  font-size: 64px;
   font-weight: 1000;
   line-height: 1;
   z-index: 1;
   margin-top: -150px;
   line-height: 1.4em;
+  background: linear-gradient(
+    to right,
+    #eab308 0,
+    #eab308 10%,
+    hsl(0, 0%, 30%) 20%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ${shine} 3s infinite linear;
 `;
+
+const Description = styled.p`
+  color: whitesmoke;
+  font-size: 20px;
+  line-height: 2;
+  max-width: 600px;
+`
 
 const Button = styled.button`
   position: relative;
@@ -68,7 +96,7 @@ const Button = styled.button`
   border: 2px solid;
   font: inherit;
   line-height: 1;
-  margin: 0.5em;
+  margin-top: 20px;
   padding: 1em 2em;
 
   &:hover {
@@ -118,7 +146,11 @@ function Home({ handleClick }: { handleClick: () => void }) {
     <Section className="is-active" id="section-1">
       <Intro>
         <IntroBanner>
-          <Title>Hello<br />I&apos;m Vasa<br /></Title>
+          <Title>Hello<br />My name is Vasa<br /></Title>
+          <Description>
+            As a computer repair technician transitioning to software development,<br />
+            I have a strong passion for coding and a deep-rooted love for all things related to computers and technology.
+          </Description>
           <Button onClick={handleClick}>Contact</Button>
           <Img src={Augustus} />
         </IntroBanner>
