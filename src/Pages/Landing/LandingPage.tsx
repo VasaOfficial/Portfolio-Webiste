@@ -10,12 +10,13 @@ import Contact from "../../components/ScrollablePages/Contact";
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFromButton, setActiveFromButton] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   // Home button function
   const handleClick = () => {
     const section1 = document.getElementById("section-1");
     const section3 = document.getElementById("section-3");
-  
+
     if (section1 !== null) {
       section1.classList.remove("is-active");
     }
@@ -23,34 +24,39 @@ function LandingPage() {
       section3.classList.add("is-active");
     }
     setActiveFromButton(true);
-  }; 
+    setCurrentIndex(2);
+  };  
   
   // changing pages on scroll
   useEffect(() => {
-    const sections = [
-      document.getElementById("section-1"),
-      document.getElementById("section-2"),
-      document.getElementById("section-3"),
-    ];
-  
-    let currentIndex = 0;
+    const sections = [document.getElementById("section-1"), document.getElementById("section-2"), document.getElementById("section-3")];
   
     const handleWheel = (event: WheelEvent) => {
       const delta = Math.sign(event.deltaY);
-      sections[currentIndex]?.classList.remove("is-active");
+      const nextIndex = (currentIndex + delta + sections.length) % sections.length;
     
-      if (currentIndex === 2 && delta === 1) {
-        // Do not allow scrolling down on section-3
-        currentIndex = 2;
-      } else if (currentIndex === 0 && delta === -1) {
+      const section1 = document.getElementById("section-1");
+      const section3 = document.getElementById("section-3");
+    
+      if (section1?.classList.contains("is-active") && delta === -1) {
         // Do not allow scrolling up on section-1
-        currentIndex = 0;
-      } else {
-        currentIndex = (currentIndex + delta + sections.length) % sections.length;
+        setCurrentIndex(0);
+        return;
+      } if (section3?.classList.contains("is-active") && delta === 1) {
+        // Do not allow scrolling down on section-3
+        setCurrentIndex(2);
+        return;
       }
     
-      sections[currentIndex]?.classList.add("is-active");
+      sections[currentIndex]?.classList.remove("is-active");
+      sections[nextIndex]?.classList.add("is-active");
+    
+      setCurrentIndex(nextIndex);
+      if (delta === -1) {
+        setActiveFromButton(false);
+      }
     };
+    
     
     sections[currentIndex]?.classList.add("is-active");
     sections.forEach((section) => {
@@ -62,7 +68,7 @@ function LandingPage() {
         section?.removeEventListener("wheel", handleWheel);
       });
     };
-  }, []);
+  }, [currentIndex]);
   
   // opening/closing navbar menu
   const toggleMenu = () => {
