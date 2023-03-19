@@ -29,6 +29,7 @@ const Section = styled.li`
     width: 100%;
     height: 100%;
     list-style: none;
+    margin-top: 80px;
   }
 `;
 
@@ -115,20 +116,19 @@ const Img = styled.img`
 
 const IntroOptions = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0;
   padding: 0;
   list-style: none;
+  align-items: flex-start;
 
   div {
     max-width: 250px;
     text-decoration: none;
     color: gray;
     transition: color .2s ease-in-out;
-
-    :hover {
-      color: white;
-    }
+    color: white;
+    text-align: center;
   }
 
   h3 {
@@ -136,7 +136,7 @@ const IntroOptions = styled.div`
     text-transform: uppercase;
   }
 
-  p {
+  ul {
     margin-bottom: 0;
   }
 `;
@@ -156,25 +156,28 @@ function Home({ handleClick }: { handleClick: () => void }) {
         </IntroBanner>
         <IntroOptions>
           <div>
-            <h3>Lorem ipsum</h3>
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit
-               sed do.
-             </p>
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML5/CSS3</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Next.js</li>
+            </ul>
           </div>
           <div>
-            <h3>Lorem ipsum</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                sed do.
-              </p>
+            <h3>Backend</h3>
+            <ul>
+              <li>Node.js</li>
+              <li>Express</li>
+            </ul>
           </div>
           <div>
-             <h3>Lorem ipsum</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                  sed do.
-                </p>
+            <h3>Tools</h3>
+            <ul>
+              <li>Vite</li>
+              <li>Tailwind</li>
+              <li>Redux</li>
+            </ul>
           </div>
         </IntroOptions>
       </Intro>
