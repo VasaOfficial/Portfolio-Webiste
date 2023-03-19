@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { SideNavContainer, SideNav, ListItem, ListItemTitle } from "./styles";
 
 interface NavItem {
@@ -6,9 +6,15 @@ interface NavItem {
   id: string;
 }
 
-function NavScroll({ activeFromButton, setActiveFromButton }: { activeFromButton: boolean, setActiveFromButton: (value: boolean) => void }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  
+interface NavScrollProps {
+  activeFromButton: boolean;
+  setActiveFromButton: (value: boolean) => void;
+  activeIndex: number;
+  setActiveIndex: (value: number) => void;
+}
+
+function NavScroll({ activeFromButton, setActiveFromButton, activeIndex, setActiveIndex }: NavScrollProps) {
+
   const navItems: NavItem[] = [
     { id: "home", label: "Home" },
     { id: "projects", label: "Projects" },
@@ -68,7 +74,7 @@ function NavScroll({ activeFromButton, setActiveFromButton }: { activeFromButton
     return () => {
       window.removeEventListener('wheel', handleWindowWheel);
     };
-  }, [activeIndex, navItems.length]);
+  }, [activeIndex, navItems.length, setActiveIndex]);
   
   return (
     <SideNavContainer>
