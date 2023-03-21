@@ -13,7 +13,7 @@ function LandingPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   // Home button function
-  const handleClick = () => {
+  const contactBtnClick = () => {
     const section1 = document.getElementById("section-1");
     const section3 = document.getElementById("section-3");
 
@@ -81,6 +81,29 @@ function LandingPage() {
     }
   };
 
+  const handleOuterLiClick = (index: number) => {
+    const section1 = document.getElementById("section-1");
+    const section2 = document.getElementById('section-2');
+    const section3 = document.getElementById("section-3");
+  
+    if (index === 0 && section1 !== null) {
+      section1.classList.add("is-active");
+      section2?.classList.remove('is-active');
+      section3?.classList.remove("is-active");
+      setCurrentIndex(0);
+    } else if (index === 1 && section2 !== null) {
+      section1?.classList.remove("is-active");
+      section3?.classList.remove("is-active");
+      section2.classList.add('is-active');
+      setCurrentIndex(1);
+    } else if (index === 2 && section3 !== null) {
+      section1?.classList.remove("is-active");
+      section2?.classList.remove('is-active');
+      section3.classList.add("is-active");
+      setCurrentIndex(2);
+    }
+  };  
+
   return (
       <Perspective menuOpen={menuOpen}>
           <OuterNavContainer menuOpen={menuOpen} />
@@ -93,15 +116,15 @@ function LandingPage() {
                 activeIndex={currentIndex}
                 setActiveIndex={setCurrentIndex}
               />
-              <Home  handleClick={handleClick}/> 
+              <Home  contactBtnClick={contactBtnClick}/> 
               <Projects /> 
               <Contact /> 
             </Wrapper>
         </Container>
         <OuterNav menuOpen={menuOpen}>
-          <OuterLi menuOpen={menuOpen}>Home</OuterLi>
-          <OuterLi menuOpen={menuOpen}>Projects</OuterLi>
-          <OuterLi menuOpen={menuOpen}>Contact</OuterLi>
+          <OuterLi menuOpen={menuOpen} onClick={() => handleOuterLiClick(0)}>Home</OuterLi>
+          <OuterLi menuOpen={menuOpen} onClick={() => handleOuterLiClick(1)}>Projects</OuterLi>
+          <OuterLi menuOpen={menuOpen} onClick={() => handleOuterLiClick(2)}>Contact</OuterLi>
         </OuterNav>
       </Perspective>
   )

@@ -142,7 +142,7 @@ const IntroOptions = styled.div`
   }
 `;
 
-function Home({ handleClick }: { handleClick: () => void }) {
+function Home({ contactBtnClick }: { contactBtnClick: () => void }) {
   return (
     <Section className="is-active" id="section-1">
       <Intro>
@@ -152,7 +152,7 @@ function Home({ handleClick }: { handleClick: () => void }) {
             As a computer repair technician transitioning to software development,<br />
             I have a strong passion for coding and a deep-rooted love for all things related to computers and technology.
           </Description>
-          <Button onClick={handleClick}>Contact</Button>
+          <Button onClick={contactBtnClick}>Contact</Button>
           <Img src={Augustus} />
         </IntroBanner>
         <IntroOptions>
