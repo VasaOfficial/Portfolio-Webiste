@@ -21,6 +21,7 @@ const Section = styled.li`
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease-in-out, visibility 0s 0.4s;
+  margin-top: 80px;
 
   &.is-active {
     opacity: 1;

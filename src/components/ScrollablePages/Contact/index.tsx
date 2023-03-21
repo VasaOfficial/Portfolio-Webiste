@@ -112,13 +112,13 @@ function Contact() {
             </ModalInformation>
             <ModalOptionsList>
               <ModalOptionItem>
-                <ModalOptionLink href="#0">LinkedIn</ModalOptionLink>
+                <ModalOptionLink href="https://www.linkedin.com/in/vasilijepleskonjicofficial/" target="_blank">LinkedIn</ModalOptionLink>
               </ModalOptionItem>
               <ModalOptionItem>
-                <ModalOptionLink href="#0">GitHub</ModalOptionLink>
+                <ModalOptionLink href="https://github.com/VasaOfficial" target="_blank">GitHub</ModalOptionLink>
               </ModalOptionItem>
               <ModalOptionItem>
-                <ModalOptionLink href="#0">Upwork</ModalOptionLink>
+                <ModalOptionLink href="#0" target="_blank">Upwork</ModalOptionLink>
               </ModalOptionItem>
             </ModalOptionsList>
           </ModalContainer>

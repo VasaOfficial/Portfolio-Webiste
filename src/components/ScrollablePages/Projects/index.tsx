@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react'
 import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemLink, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev } from './style'
 import rightArrow from '../../../assets/Projects/left.png'
 import leftArrow from '../../../assets/Projects/right.png'
-import leftP from '../../../assets/Projects/leftP.jpg'
-import rightP from '../../../assets/Projects/rightP.jpg'
-import centerP from '../../../assets/Projects/centerP.jpg'
+import noImage from '../../../assets/Projects/Image.jpg'
 
 type Project = {
   title: string;
@@ -16,17 +14,17 @@ type Project = {
 const projects: Project[] = [
   {
     title: 'Project 1',
-    image: `${leftP}`,
+    image: `${noImage}`,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
   },
   {
     title: 'Project 2',
-    image: `${centerP}`,
+    image: `${noImage}`,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
   },
   {
     title: 'Project 3',
-    image: `${rightP}`,
+    image: `${noImage}`,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
   },
 ]
