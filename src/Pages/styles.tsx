@@ -84,7 +84,7 @@ export const OuterNav = styled.ul<{ menuOpen: boolean }>`
   visibility: ${({ menuOpen }) => (menuOpen ? 'visible' : 'hidden')};
 `
 
-export const OuterLi = styled.li<{ menuOpen: boolean }>`
+export const OuterLi = styled.li<{ menuOpen: boolean, currentIndex: number }>`
   position: relative;
   transform-style: preserve-3d;
   transform: translateX(350px) translateZ(-1000px);
@@ -100,7 +100,7 @@ export const OuterLi = styled.li<{ menuOpen: boolean }>`
     transition: transform .4s, opacity .4s;
   `}
 
-  &:first-child::before {
+  &:nth-child(${({ currentIndex }) => currentIndex + 1}):before {
     content: "";
     position: absolute;
     top: 50%;
