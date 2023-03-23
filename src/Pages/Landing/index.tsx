@@ -119,9 +119,9 @@ function LandingPage() {
             </Wrapper>
         </Container>
         <OuterNav menuOpen={menuOpen}>
-          <OuterLi menuOpen={menuOpen} onClick={() => handleOuterLiClick(0)} currentIndex={currentIndex}>Home</OuterLi>
-          <OuterLi menuOpen={menuOpen} onClick={() => handleOuterLiClick(1)} currentIndex={currentIndex}>Projects</OuterLi>
-          <OuterLi menuOpen={menuOpen} onClick={() => handleOuterLiClick(2)} currentIndex={currentIndex}>Contact</OuterLi>
+          <OuterLi menuOpen={menuOpen} onClick={() => { handleOuterLiClick(0); setMenuOpen(false);}} currentIndex={currentIndex}>Home</OuterLi>
+          <OuterLi menuOpen={menuOpen} onClick={() => { handleOuterLiClick(1); setMenuOpen(false);}} currentIndex={currentIndex}>Projects</OuterLi>
+          <OuterLi menuOpen={menuOpen} onClick={() => { handleOuterLiClick(2); setMenuOpen(false);}} currentIndex={currentIndex}>Contact</OuterLi>
         </OuterNav>
       </Perspective>
   )
