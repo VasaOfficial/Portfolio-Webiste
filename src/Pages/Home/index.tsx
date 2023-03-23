@@ -100,6 +100,7 @@ const Button = styled.button`
   line-height: 1;
   margin-top: 20px;
   padding: 1em 2em;
+  margin-right: 20px;
 
   &:hover {
     box-shadow: 0 0.5em 0.5em -0.4em #eab308;
@@ -129,16 +130,20 @@ const IntroOptions = styled.div`
     color: gray;
     transition: color .2s ease-in-out;
     color: white;
-    text-align: center;
   }
 
   h3 {
     font-size: 16px;
     text-transform: uppercase;
+    text-align: left;
   }
 
   ul {
-    margin-bottom: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
   }
 `;
 
@@ -153,6 +158,7 @@ function Home({ contactBtnClick }: { contactBtnClick: () => void }) {
             I have a strong passion for coding and a deep-rooted love for all things related to computers and technology.
           </Description>
           <Button onClick={contactBtnClick}>Contact</Button>
+          <Button>Resume</Button>
           <Img src={Augustus} />
         </IntroBanner>
         <IntroOptions>
