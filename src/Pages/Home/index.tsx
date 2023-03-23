@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import Augustus from '../../../assets/Home/augustus.png'
+import Augustus from '../../assets/Home/augustus.png'
 
 const shine = keyframes`
   0% {

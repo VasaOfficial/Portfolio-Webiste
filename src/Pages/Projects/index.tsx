@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react' 
 
 import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemLink, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev } from './style'
-import rightArrow from '../../../assets/Projects/left.png'
-import leftArrow from '../../../assets/Projects/right.png'
-import noImage from '../../../assets/Projects/Image.jpg'
+import rightArrow from '../../assets/Projects/left.png'
+import leftArrow from '../../assets/Projects/right.png'
+import noImage from '../../assets/Projects/Image.jpg'
 
 type Project = {
   title: string;

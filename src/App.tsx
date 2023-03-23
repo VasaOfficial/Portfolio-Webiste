@@ -1,11 +1,11 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import Home from './Pages/LandingPage';
+import LandingPage from './Pages/Landing';
 
 export function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LandingPage />} />
       </Routes>
     </div>
   );

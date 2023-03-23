@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import louvre from '../../../assets/Contact/louvre.avif'
+import louvre from '../../assets/Contact/louvre.avif'
 
 const Section = styled.li`
   position: absolute;

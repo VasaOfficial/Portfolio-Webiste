@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import { Perspective, Container, Wrapper, OuterNavContainer, OuterNav, OuterLi } from "./styles";
 
-import Navbar from "../components/Navigation/Navbar/Navbar";
-import NavScroll from "../components/ProgressBar";
-import Home from "../components/ScrollablePages/Home/index";
-import Projects from "../components/ScrollablePages/Projects"
-import Contact from "../components/ScrollablePages/Contact";
+import Navbar from "../../components/Navbar";
+import NavScroll from "../../components/ProgressBar";
+import Home from "../Home";
+import Projects from "../Projects";
+import Contact from "../Contact";
 
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFromButton, setActiveFromButton] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Home button function
   const contactBtnClick = () => {
     const section1 = document.getElementById("section-1");
     const section3 = document.getElementById("section-3");
@@ -39,11 +38,9 @@ function LandingPage() {
       const section3 = document.getElementById("section-3");
     
       if (section1?.classList.contains("is-active") && delta === -1) {
-        // Do not allow scrolling up on section-1
         setCurrentIndex(0);
         return;
       } if (section3?.classList.contains("is-active") && delta === 1) {
-        // Do not allow scrolling down on section-3
         setCurrentIndex(2);
         return;
       }
