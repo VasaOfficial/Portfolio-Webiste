@@ -1,5 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
+const pulseAnimation = keyframes`
+  0% { box-shadow: 0 0 0 0 #eab308; }
+`;
+
 export const slideAnimation = keyframes`
   0% {
     opacity: 1;
@@ -11,7 +15,6 @@ export const slideAnimation = keyframes`
     opacity: 1;
   }
 `;
-
 
 export const Section = styled.li`
   opacity: 0;
@@ -47,6 +50,7 @@ export const ProjectTitle = styled.h2`
   margin: 0 0 100px 0;
   font-size: 30px;
   text-align: center;
+  pointer-events: none;
 `;
 
 export const ProjectLockup = styled.div`
@@ -61,6 +65,7 @@ export const Slider = styled.ul<{ slideAnimation: boolean }>`
   display: flex;
   width: 80%;
   margin: 0 auto;
+  margin-top: 50px;
   padding: 0;
   list-style: none;
   justify-content: center;
@@ -108,9 +113,8 @@ margin: 0 10px;
     }
 `;
 
-export const SliderItemLink = styled.a`
-  text-decoration: none;
-  color: #858585;
+export const SliderItemContainer = styled.div`
+  color: #whitesmoke;
 `;
 
 export const SliderItemImage = styled.div`
@@ -135,6 +139,7 @@ export const SliderItemDescription = styled.p<{ parentClass: string }>`
   display: ${(props) => (props.parentClass === "center" ? "block" : "none")};
   max-width: 250px;
   margin: 0 auto;
+  margin-bottom: 10px;
 `;
 
 export const SliderPrev = styled.div`
@@ -146,8 +151,8 @@ export const SliderPrev = styled.div`
   justify-content: center;
   background-color: #282828;
   border-radius: 50%;
-  cursor: pointer;
   right: 0;
+  cursor: pointer;
 
   img {
     width: 20px;
@@ -164,11 +169,32 @@ export const SliderNext = styled.div`
   justify-content: center;
   background-color: #282828;
   border-radius: 50%;
-  cursor: pointer;
   left: 0;
+  cursor: pointer;
 
   img {
     width: 20px;
     fill: #fff;
+  }
+`;
+
+export const ProjectLink = styled.a`
+  position: relative;
+  padding: 10px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffa260 !important;
+  transition: 0.25s;
+  background: none;
+  border: 2px solid #ffa260;
+  font: inherit;
+  margin-top: 20px;
+  text-decoration: none;
+
+  &:hover {
+    animation: ${pulseAnimation} 1s;
+    box-shadow: 0 0 0 2em transparent;
+    color: #eab308;
+    cursor: pointer;
   }
 `;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react' 
 
-import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemLink, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev } from './style'
+import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemContainer, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev, ProjectLink } from './style'
 import rightArrow from '../../assets/Projects/left.png'
 import leftArrow from '../../assets/Projects/right.png'
 import noImage from '../../assets/Projects/Image.jpg'
@@ -9,6 +9,8 @@ type Project = {
   title: string;
   image: string;
   description: string;
+  live: string;
+  github: string;
 }
 
 const projects: Project[] = [
@@ -16,16 +18,22 @@ const projects: Project[] = [
     title: 'Project 1',
     image: `${noImage}`,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
+    live: 'https://project1.live',
+    github: 'https://github.com/project1',
   },
   {
     title: 'Project 2',
     image: `${noImage}`,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
+    live: 'https://project2.live',
+    github: 'https://github.com/project2',
   },
   {
     title: 'Project 3',
     image: `${noImage}`,
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
+    live: 'https://project3.live',
+    github: 'https://github.com/project1',
   },
 ]
 
@@ -77,13 +85,18 @@ function Projects() {
                 className={getSliderItemClass(index)}
                 key={project.title}
               >
-                <SliderItemLink href="#0" >
+                <SliderItemContainer >
                   <SliderItemImage>
                     <img src={project.image} alt={project.title} />
                   </SliderItemImage>
                   <SliderItemTitle>{project.title}</SliderItemTitle>
                   <SliderItemDescription parentClass={sliderPosition === index ? "center" : ""}>{project.description}</SliderItemDescription>
-                </SliderItemLink>
+                </SliderItemContainer>
+                {sliderPosition === index && (
+                  <>
+                    <ProjectLink href={project.live} target="_blank">live demo</ProjectLink>
+                    <ProjectLink href={project.github} target="_blank">view on github</ProjectLink>
+                  </>)}
               </SliderItem>
             ))}
           </Slider>

@@ -90,7 +90,6 @@ const Button = styled.button`
   padding: 5px 17px 5px 12px;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: white;
   cursor: pointer;
   color: #ffa260;
   transition: 0.25s;
