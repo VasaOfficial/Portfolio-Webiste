@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { Perspective, Container, Wrapper, OuterNavContainer, OuterNav, OuterLi } from "./styles";
-
 import Navbar from "../../components/Navbar";
 import NavScroll from "../../components/ProgressBar";
 import Home from "../Home";
@@ -11,7 +10,7 @@ function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFromButton, setActiveFromButton] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const contactBtnClick = () => {
     const section1 = document.getElementById("section-1");
     const section3 = document.getElementById("section-3");

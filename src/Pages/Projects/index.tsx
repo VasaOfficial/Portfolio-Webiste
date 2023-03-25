@@ -71,7 +71,6 @@ function Projects() {
       return 'right';
     } 
       return 'center';
-    
   };
 
   return (

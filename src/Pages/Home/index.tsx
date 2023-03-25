@@ -146,7 +146,11 @@ const IntroOptions = styled.div`
   }
 `;
 
-function Home({ contactBtnClick }: { contactBtnClick: () => void }) {
+type HomeProps = {
+  contactBtnClick: () => void;
+};
+
+function Home({ contactBtnClick }: HomeProps) {
   return (
     <Section className="is-active" id="section-1">
       <Intro>
