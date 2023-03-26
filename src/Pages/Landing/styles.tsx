@@ -19,7 +19,6 @@ export const Container = styled.div<{ menuOpen: boolean }>`
   align-items: center;
   height: 100vh;
   position: relative;
-  padding-left: 60px;
   transform: translateZ(0) translateX(0) rotateY(0deg);
   min-height: 100%;
   transition: transform .4s;

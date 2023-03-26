@@ -21,6 +21,10 @@ const SideNavContainer = styled.nav`
     opacity: 0.50;
     z-index: 10;
   }
+
+  @media (max-width: 1180px) {
+    display: none;
+  }
 `;
 
 const SideNav = styled.ul`

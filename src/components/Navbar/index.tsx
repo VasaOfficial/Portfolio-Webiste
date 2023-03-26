@@ -5,8 +5,8 @@ import logo from '../../assets/Nav/logo.png'
 const NavbarContainer = styled.header`
   position: fixed;
   top: 0;
-  max-width: 85%;
-  width: 85%;
+  max-width: 90%;
+  width: 100%;
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -21,8 +21,8 @@ const LogoContainer = styled.div`
   color: #000;
 
   img {
-    width: 130px; 
-    height: 130px;
+    width: 115px; 
+    height: 115px;
   }
 `;
 
