@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useCallback} from "react";
 import { Perspective, Container, Wrapper, OuterNavContainer, OuterNav, OuterLi } from "./styles";
 import Navbar from "../../components/Navbar";
 import NavScroll from "../../components/ProgressBar";
@@ -15,12 +15,9 @@ function LandingPage() {
     const section1 = document.getElementById("section-1");
     const section3 = document.getElementById("section-3");
 
-    if (section1 !== null) {
-      section1.classList.remove("is-active");
-    }
-    if (section3 !== null) {
-      section3.classList.add("is-active");
-    }
+    section1?.classList.remove('is-active')
+    section3?.classList.add('is-active')
+
     setActiveFromButton(true);
     setCurrentIndex(2);
   };  
@@ -33,24 +30,19 @@ function LandingPage() {
       const delta = Math.sign(event.deltaY);
       const nextIndex = (currentIndex + delta + sections.length) % sections.length;
     
-      const section1 = document.getElementById("section-1");
-      const section3 = document.getElementById("section-3");
-    
-      if (section1?.classList.contains("is-active") && delta === -1) {
+      if (currentIndex === 0 && delta === -1) {
         setCurrentIndex(0);
         return;
-      } if (section3?.classList.contains("is-active") && delta === 1) {
+      } if (currentIndex === 2 && delta === 1) {
         setCurrentIndex(2);
         return;
-      }
+      }      
     
       sections[currentIndex]?.classList.remove("is-active");
       sections[nextIndex]?.classList.add("is-active");
     
       setCurrentIndex(nextIndex);
-      if (delta === -1) {
-        setActiveFromButton(false);
-      }
+      setActiveFromButton(false);
     };
     
     
@@ -77,28 +69,36 @@ function LandingPage() {
     }
   };
 
-  const handleOuterLiClick = (index: number) => {
-    const section1 = document.getElementById("section-1");
-    const section2 = document.getElementById('section-2');
-    const section3 = document.getElementById("section-3");
-  
-    if (index === 0 && section1 !== null) {
-      section1.classList.add("is-active");
-      section2?.classList.remove('is-active');
-      section3?.classList.remove("is-active");
-      setCurrentIndex(0);
-    } else if (index === 1 && section2 !== null) {
+  // changes section when clicked on nav menu text
+  const handleOuterLiClick = useCallback(
+    (index: number) => {
+      const section1 = document.getElementById("section-1");
+      const section2 = document.getElementById("section-2");
+      const section3 = document.getElementById("section-3");
+
       section1?.classList.remove("is-active");
+      section2?.classList.remove("is-active");
       section3?.classList.remove("is-active");
-      section2.classList.add('is-active');
-      setCurrentIndex(1);
-    } else if (index === 2 && section3 !== null) {
-      section1?.classList.remove("is-active");
-      section2?.classList.remove('is-active');
-      section3.classList.add("is-active");
-      setCurrentIndex(2);
-    }
-  };  
+
+      switch (index) {
+        case 0:
+          section1?.classList.add("is-active");
+          setCurrentIndex(0);
+          break;
+        case 1:
+          section2?.classList.add("is-active");
+          setCurrentIndex(1);
+          break;
+        case 2:
+          section3?.classList.add("is-active");
+          setCurrentIndex(2);
+          break;
+        default:
+          break;
+      }
+    },
+    [setCurrentIndex]
+  );
 
   return (
       <Perspective menuOpen={menuOpen}>
