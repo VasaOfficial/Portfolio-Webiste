@@ -16,7 +16,7 @@ export const slideAnimation = keyframes`
   }
 `;
 
-export const Section = styled.li`
+export const Section = styled.div`
   opacity: 0;
   visibility: hidden;
   transition: opacity .4s ease-in-out, visibility 0s .4s;

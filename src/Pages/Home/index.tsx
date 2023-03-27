@@ -13,7 +13,7 @@ const shine = keyframes`
   }
 `;
 
-const Section = styled.li`
+const Section = styled.div`
   position: absolute;
   list-style: none;
   width: 100%;
@@ -202,9 +202,9 @@ type HomeProps = {
   contactBtnClick: () => void;
 };
 
-function Home({ contactBtnClick }: HomeProps) {
+function Home({ contactBtnClick}: HomeProps) {
   return (
-    <Section className="is-active" id="section-1">
+    <Section className="is-active" id="section-1" >
       <Intro>
         <IntroBanner>
           <Title>Hello<br />My name is Vasa<br /></Title>

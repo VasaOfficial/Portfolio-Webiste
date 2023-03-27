@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import louvre from '../../assets/Contact/louvre.avif'
 
-const Section = styled.li`
+const Section = styled.div`
   position: absolute;
   list-style: none;
   width: 100%;
