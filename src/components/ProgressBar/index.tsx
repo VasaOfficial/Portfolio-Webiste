@@ -22,7 +22,7 @@ const SideNavContainer = styled.nav`
     z-index: 10;
   }
 
-  @media (max-width: 1180px) {
+  @media (max-width: 1300px) {
     display: none;
   }
 `;

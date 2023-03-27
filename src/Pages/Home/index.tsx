@@ -58,11 +58,11 @@ const IntroBanner = styled.div`
     background-color: #282828;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     height: 350px;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media (max-width: 500px) {
     height: 475px;
   }
 `;
@@ -85,15 +85,15 @@ const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   animation: ${shine} 3s infinite linear;
   
-  @media only screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     font-size: 48px;
   }
 
-  @media only screen and (max-width: 720px) {
+  @media (max-width: 720px) {
     font-size: 42px;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media (max-width: 400px) {
     font-size: 28px;
     padding-top: 20px;
   }
@@ -105,12 +105,12 @@ const Description = styled.p`
   line-height: 2;
   max-width: 600px;
 
-  @media only screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     font-size: 16px;
     max-width: 400px;
   }
 
-  @media only screen and (max-width: 720px) {
+  @media (max-width: 720px) {
     font-size: 14px;
   }
 `;
@@ -165,11 +165,11 @@ const Tools = styled.div`
     transition: color .2s ease-in-out;
     color: white;
 
-    @media only screen and (max-width: 400px) {
+    @media (max-width: 400px) {
       padding: 8px;
     }
 
-    @media only screen and (max-width: 500px) {
+    @media (max-width: 500px) {
       padding: 10px;
     }
   }
@@ -179,7 +179,7 @@ const Tools = styled.div`
     text-transform: uppercase;
     text-align: left;
 
-    @media only screen and (max-width: 400px) {
+    @media (max-width: 400px) {
       font-size: 12px;
       margin-top: 0px;
     }
@@ -192,7 +192,7 @@ const Tools = styled.div`
     justify-content: center;
     padding-left: 0;
 
-    @media only screen and (max-width: 400px) {
+    @media (max-width: 400px) {
       font-size: 10px;
     }
   }

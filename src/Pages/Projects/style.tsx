@@ -41,9 +41,12 @@ export const ProjectContainer = styled.div`
   max-width: 80%;
   height: 100%;
   flex-direction: column;
-  justify-content: flex-start;
   margin: 0 auto;
   padding-top: 80px;
+
+  @media only screen and (max-width: 1180px) {
+    max-width: 100%;
+  }
 `;
 
 export const ProjectTitle = styled.h2`
@@ -58,6 +61,7 @@ export const ProjectLockup = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-90px);
 `;
 
 export const Slider = styled.ul<{ slideAnimation: boolean }>`
@@ -83,21 +87,17 @@ width: 300px;
 height: 400px;
 margin: 0 10px;
 
-  &.left {
-    img {
-      width: 150px;
-      height: 150px;
-    }
-  }
-
+  &.left,
   &.right {
     img {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
     }
   }
 
   &.center {
+    padding-top: 100px;
+
     a {
       color: #fff;
     }
@@ -109,7 +109,54 @@ margin: 0 10px;
 
     p {
       font-size: 18px;
-      padding-top 10px;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    &.left,
+    &.right {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    &.center {
+      img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+    &.left, &.right {
+      img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    &.center {
+      img {
+        width: 190px;
+        height: 190px;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    &.left, &.right {
+      display: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &.center {
+      img {
+        width: 150px;
+        height: 150px;
+      }
     }
 `;
 
