@@ -57,6 +57,14 @@ const IntroBanner = styled.div`
     height: 2px;
     background-color: #282828;
   }
+
+  @media only screen and (max-width: 1000px) {
+    height: 350px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    height: 475px;
+  }
 `;
 
 const Title = styled.h1`
@@ -76,6 +84,19 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: ${shine} 3s infinite linear;
+  
+  @media only screen and (max-width: 1000px) {
+    font-size: 48px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    font-size: 42px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 28px;
+    padding-top: 20px;
+  }
 `;
 
 const Description = styled.p`
@@ -83,7 +104,17 @@ const Description = styled.p`
   font-size: 20px;
   line-height: 2;
   max-width: 600px;
-`
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 16px;
+    max-width: 400px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    font-size: 14px;
+  }
+`;
+
 
 const Button = styled.button`
   position: relative;
@@ -113,9 +144,13 @@ const Img = styled.img`
   height: 650px;
   bottom: 21px;
   right: 0;
+
+  @media (max-width: 1600px) {
+    display: none;
+  }
 `;
 
-const IntroOptions = styled.div`
+const Tools = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 0;
@@ -129,12 +164,25 @@ const IntroOptions = styled.div`
     color: gray;
     transition: color .2s ease-in-out;
     color: white;
+
+    @media only screen and (max-width: 400px) {
+      padding: 8px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      padding: 10px;
+    }
   }
 
   h3 {
     font-size: 16px;
     text-transform: uppercase;
     text-align: left;
+
+    @media only screen and (max-width: 400px) {
+      font-size: 12px;
+      margin-top: 0px;
+    }
   }
 
   ul {
@@ -143,6 +191,10 @@ const IntroOptions = styled.div`
     flex-direction: column;
     justify-content: center;
     padding-left: 0;
+
+    @media only screen and (max-width: 400px) {
+      font-size: 10px;
+    }
   }
 `;
 
@@ -164,7 +216,7 @@ function Home({ contactBtnClick }: HomeProps) {
           <Button>Resume</Button>
           <Img src={Augustus} />
         </IntroBanner>
-        <IntroOptions>
+        <Tools>
           <div>
             <h3>Frontend</h3>
             <ul>
@@ -189,7 +241,7 @@ function Home({ contactBtnClick }: HomeProps) {
               <li>Redux</li>
             </ul>
           </div>
-        </IntroOptions>
+        </Tools>
       </Intro>
     </Section>
   )
