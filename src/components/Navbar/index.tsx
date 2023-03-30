@@ -16,8 +16,6 @@ const NavbarContainer = styled.header`
 `;
 
 const LogoContainer = styled.div`
-  font-size: 24px;
-  font-weight: bold;
   color: #000;
 
   img {
@@ -27,14 +25,19 @@ const LogoContainer = styled.div`
 `;
 
 const MenuContainer = styled.nav`
-  font-size: 24px;
   color: #000;
   cursor: pointer;
   padding: 10px;
+  border: 3px solid transparent;
 
   img {
     width: 30px;
     height: 30px;
+  }
+
+  &:hover {
+    border: 3px solid white;
+    border-radius: 5px;
   }
 `;
 
