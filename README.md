@@ -1,19 +1,26 @@
-# Vasa's Portfolio Website
-
-![Screenshot of My Portfolio Website](https://user-images.githubusercontent.com/113908218/227735703-a8a43e34-0eac-4959-9b53-326ebce8e4e0.png)
+<h1 align="center">My Portfolio Website</h1>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/113908218/227735703-a8a43e34-0eac-4959-9b53-326ebce8e4e0.png" alt="Screenshot of My Portfolio Website" width="800">
+</p>
 
 ## Description
 
-This is my personal portfolio website, where I showcase my projects, skills, and experience. All my contacts are here so feel free to contact me :smiley:.
+Welcome to my personal portfolio website, where I showcase my projects, skills, and experience. This website serves as a central hub to learn more about me and my work. Feel free to explore and don't hesitate to contact me if you have any questions or inquiries.
+
+<h2>Live Demo</h2>
+
+Check out the live demo of my Portfolio Website [here](https://your-demo-url.com).
 
 ## Features
-* Responsive design for optimal viewing on all devices
-* Clean and modern UI/UX design
-* Easy navigation to different sections of the website
-* Showcase of my skills and projects with descriptions and links to live demos or GitHub repositories
-* Contact form for potential employers or clients to get in touch with me
+
+- Responsive design for optimal viewing on all devices
+- Clean and modern UI/UX design
+- Easy navigation to different sections of the website
+- Showcase of my skills and projects with descriptions and links to live demos or GitHub repositories
+- Contact form for potential employers or clients to get in touch with me
 
 ## Usage
+
 To use my portfolio website, follow these instructions:
 
 1. Navigate to the live website in your web browser.
@@ -33,18 +40,19 @@ To use my portfolio website, follow these instructions:
 Thank you for using my portfolio website! If you have any questions or feedback, feel free to contact me.
 
 ## Technologies Used
-* HTML5
-* CSS3 (styled-components)
-* React
-* TypeScript
-* Vite
-* eslint/prettier
+
+- HTML5
+- CSS3 (styled-components)
+- React
+- TypeScript
+- Vite
+- eslint/prettier
 
 ## Installation
-1. Clone the repository: git clone https://github.com/VasaOfficial/Portfolio-Website.git
-2. Run commad in terminal: npm install
 
-## Contributing
-Contributions are welcome. Please submit a pull request if you have any suggestions or improvements.
+To set up the project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/VasaOfficial/Portfolio-Website.git`
+2. Install the dependencies: `npm install`
 
 
