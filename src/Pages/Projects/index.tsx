@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react' 
-
 import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemContainer, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev, ProjectLink } from './style'
 import rightArrow from '../../assets/Projects/left.png'
 import leftArrow from '../../assets/Projects/right.png'
 import noImage from '../../assets/Projects/Image.jpg'
+import EarthSensor from '../../assets/Projects/da.jpg'
 
 type Project = {
   title: string;
@@ -22,11 +22,11 @@ const projects: Project[] = [
     github: 'https://github.com/project1',
   },
   {
-    title: 'Project 2',
-    image: `${noImage}`,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
+    title: 'EarthSensor',
+    image: `${EarthSensor}`,
+    description: 'Find out the air quality of a city near you',
     live: 'https://project2.live',
-    github: 'https://github.com/project2',
+    github: 'https://github.com/VasaOfficial/EarthSensor',
   },
   {
     title: 'Project 3',

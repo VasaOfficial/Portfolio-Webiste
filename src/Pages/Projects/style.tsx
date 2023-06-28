@@ -171,7 +171,7 @@ export const SliderItemImage = styled.div`
   img {
     width: 100%;
     border: 0;
-    border-radius: 50%;
+    border-radius: 5px;
   }
 `;
 
