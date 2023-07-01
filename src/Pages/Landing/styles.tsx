@@ -110,4 +110,8 @@ export const OuterLi = styled.li<{ menuOpen: boolean, currentIndex: number }>`
     opacity: 1;
     background-color: #eab308;
   }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 40px;
+  }
 `

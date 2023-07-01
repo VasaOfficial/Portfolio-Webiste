@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react' 
-import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItem, SliderItemContainer, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev, ProjectLink } from './style'
+import { useState} from 'react' 
+import { useTransition, animated } from '@react-spring/web';
+import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev, ProjectLink } from './style'
 import rightArrow from '../../assets/Projects/left.png'
 import leftArrow from '../../assets/Projects/right.png'
 import noImage from '../../assets/Projects/Image.jpg'
-import EarthSensor from '../../assets/Projects/da.jpg'
+import EarthSensor from '../../assets/Projects/EarthSensor.jpg'
 
 type Project = {
   title: string;
@@ -24,7 +25,7 @@ const projects: Project[] = [
   {
     title: 'EarthSensor',
     image: `${EarthSensor}`,
-    description: 'Find out the air quality of a city near you',
+    description: 'Find out the air quality and weather of a city near you',
     live: 'https://project2.live',
     github: 'https://github.com/VasaOfficial/EarthSensor',
   },
@@ -39,38 +40,32 @@ const projects: Project[] = [
 
 function Projects() {
   const [activeIndex, setActiveIndex] = useState<number>(1);
-  const [sliderPosition] = useState<number>(1);
-  const [slideAnimation, setSlideAnimation] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<string>('prev');
+
+  const transitions = useTransition(projects[activeIndex], {
+    from: {
+      opacity: 0,
+      transform: slideDirection === 'prev' ? 'translateX(-100%)' : 'translateX(100%)',
+    },
+    enter: { opacity: 1, transform: 'translateX(0%)' },
+    leave: {
+      opacity: 0,
+      transform: slideDirection === 'prev' ? 'translateX(100%)' : 'translateX(-100%)',
+    },
+  });
 
   const handleSliderPrev = () => {
-    setActiveIndex(activeIndex === 0 ? projects.length - 1 : activeIndex - 1)
-    const lastProject = projects[projects.length - 1]
-    const newProjects = [ lastProject, ...projects.slice(0, projects.length - 1),
-    ]
-    projects.splice(0, projects.length, ...newProjects)
-  }
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
+    );
+    setSlideDirection('next');
+  };
 
   const handleSliderNext = () => {
-    setActiveIndex(activeIndex === projects.length - 1 ? 0 : activeIndex + 1)
-    const firstProject = projects[0]
-    const newProjects = [ ...projects.slice(1, projects.length),
-      firstProject,
-    ]
-    projects.splice(0, projects.length, ...newProjects)
-  }
-
-  useEffect(() => {
-    setSlideAnimation(true);
-    setTimeout(() => setSlideAnimation(false), 1000);
-  }, [activeIndex]);
-
-  const getSliderItemClass = (index: number) => {
-    if (index === 0) {
-      return 'left';
-    } if (index === projects.length - 1) {
-      return 'right';
-    } 
-      return 'center';
+    setActiveIndex((prevIndex) =>
+      prevIndex === projects.length - 1 ? 0 : prevIndex + 1
+    );
+    setSlideDirection('prev');
   };
 
   return (
@@ -78,33 +73,52 @@ function Projects() {
       <ProjectContainer>
         <ProjectTitle>Selected Projects</ProjectTitle>
         <ProjectLockup>
-        <Slider slideAnimation={slideAnimation}>
-            {projects.map((project, index) => (
-              <SliderItem
-                className={getSliderItemClass(index)}
-                key={project.title}
+          <Slider>
+            {transitions((style, item) => (
+              <animated.div
+                style={{
+                  ...style,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  width: '500px',
+                  height: '600px',
+                  margin: '0 10px',
+                  position: 'absolute',
+                }}
               >
-                <SliderItemContainer >
                   <SliderItemImage>
-                    <img src={project.image} alt={project.title} />
+                    <img src={item.image} alt={item.title} />
                   </SliderItemImage>
-                  <SliderItemTitle>{project.title}</SliderItemTitle>
-                  <SliderItemDescription parentClass={sliderPosition === index ? "center" : ""}>{project.description}</SliderItemDescription>
-                </SliderItemContainer>
-                {sliderPosition === index && (
+                  <SliderItemTitle>{item.title}</SliderItemTitle>
+                  <SliderItemDescription parentClass='center'>
+                    {item.description}
+                  </SliderItemDescription>
+                {activeIndex === projects.indexOf(item) && (
                   <>
-                    <ProjectLink href={project.live} target="_blank">live demo</ProjectLink>
-                    <ProjectLink href={project.github} target="_blank">view on github</ProjectLink>
-                  </>)}
-              </SliderItem>
+                    <ProjectLink href={item.live} target='_blank'>
+                      live demo
+                    </ProjectLink>
+                    <ProjectLink href={item.github} target='_blank'>
+                      view on github
+                    </ProjectLink>
+                  </>
+                )}
+              </animated.div>
             ))}
           </Slider>
-          <SliderPrev onClick={handleSliderPrev}><img src={leftArrow} alt='left' /></SliderPrev>
-          <SliderNext onClick={handleSliderNext}><img src={rightArrow} alt='right' /></SliderNext>
+          <SliderPrev onClick={handleSliderPrev}>
+            <img src={leftArrow} alt='left' />
+          </SliderPrev>
+          <SliderNext onClick={handleSliderNext}>
+            <img src={rightArrow} alt='right' />
+          </SliderNext>
         </ProjectLockup>
       </ProjectContainer>
     </Section>
-  )
+  );
 }
 
 export default Projects;
