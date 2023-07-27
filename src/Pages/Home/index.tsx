@@ -214,7 +214,7 @@ function Home({ contactBtnClick}: HomeProps) {
           </Description>
           <Button onClick={contactBtnClick}>Contact</Button>
           <Button>Resume</Button>
-          <Img src={Augustus} />
+          <Img alt="augustus" src={Augustus} />
         </IntroBanner>
         <Tools>
           <div>
