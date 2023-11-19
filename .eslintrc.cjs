@@ -24,4 +24,5 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'prettier/prettier': 0,
   },
+  ignorePatterns: ['tailwind.config.js'],
 };

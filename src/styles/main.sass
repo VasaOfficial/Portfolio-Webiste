@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap')
+
+body
+  background: #0c0c0c
+  font-size: 14px
+  line-height: 1.6
+  font-family: 'Playfair Display', serif
+  color: #fff
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+  overflow: hidden
+  flex: 1
+  padding-top: 10px
+  margin: 0
+  padding: 0
+
+
+.spinner 
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+
+/* floating animation */
+@keyframes float
+  0% 
+    transform: translateY(0px)
+  50% 
+    transform: translateY(-20px)
+  100% 
+    transform: translateY(0px)
+
+.float-cont 
+  margin-left: 8rem
+  margin-top: -150px
+
+.float-img
+  width: 200px
+  height: 180px
+  overflow: hidden
+  transform: translateY(0px)
+  animation: float 6s ease-in-out infinite
+
+  img
+    width: 100%
+    height: 170px
+
+.float-img-oposite 
+  width: 200px
+  height: 180px
+  overflow: hidden
+  transform: translateY(0px)
+  animation: float 5s ease-in-out infinite
+
+  img
+    width: 100%
+    height: 170px

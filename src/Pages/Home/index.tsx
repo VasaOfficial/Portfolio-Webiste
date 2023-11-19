@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
-import Augustus from '../../assets/Home/augustus.png'
+import float1 from '../../assets/float1.png'
+import float2 from '../../assets/float2.png'
+import float3 from '../../assets/float3.png'
 
 const shine = keyframes`
   0% {
@@ -47,6 +49,8 @@ const Intro = styled.div`
 const IntroBanner = styled.div`
   position: relative;
   height: 475px;
+  display: flex;
+  gap: 30px;
 
   :before {
     content: "";
@@ -139,17 +143,6 @@ const Button = styled.button`
   }
 `;
 
-const Img = styled.img`
-  position: absolute;
-  height: 650px;
-  bottom: 21px;
-  right: 0;
-
-  @media (max-width: 1600px) {
-    display: none;
-  }
-`;
-
 const Tools = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -207,14 +200,26 @@ function Home({ contactBtnClick}: HomeProps) {
     <Section className="is-active" id="section-1" >
       <Intro>
         <IntroBanner>
-          <Title>Hello<br />My name is Vasa<br /></Title>
-          <Description>
-            As a computer repair technician transitioning to software development,<br />
-            I have a strong passion for coding and a deep-rooted love for all things related to computers and technology.
-          </Description>
-          <Button onClick={contactBtnClick}>Contact</Button>
-          <Button>Resume</Button>
-          <Img alt="augustus" src={Augustus} />
+          <div>
+            <Title>Hello<br />My name is Vasa<br /></Title>
+            <Description>
+              As a computer repair technician transitioning to software development,<br />
+              I have a strong passion for coding and a deep-rooted love for all things related to computers and technology.
+            </Description>
+            <Button onClick={contactBtnClick}>Contact</Button>
+            <Button>Resume</Button>
+          </div>
+          <div className="float-cont">
+            <div className="float-img">
+              <img src={float1} alt="floating statue part 1" />
+            </div>
+            <div className="float-img-oposite">
+              <img src={float2} alt="floating statue part 2" />
+            </div>
+            <div className="float-img">
+              <img src={float3} alt="floating statue part 3" />
+            </div>
+          </div>
         </IntroBanner>
         <Tools>
           <div>

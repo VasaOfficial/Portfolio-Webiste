@@ -50,6 +50,7 @@ export const ProjectTitle = styled.h2`
   font-size: 30px;
   text-align: center;
   pointer-events: none;
+  color: #ffa260;
 `;
 
 export const ProjectLockup = styled.div`
@@ -98,6 +99,7 @@ export const SliderItemTitle = styled.p`
   margin-top: 10px;
   font-size: 20px;
   font-weight: 700;
+  color: #eab308;
 
   @media only screen and (max-width: 400px) {
     font-size: 18px;
