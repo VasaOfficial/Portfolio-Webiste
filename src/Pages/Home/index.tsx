@@ -5,13 +5,10 @@ import float3 from '../../assets/float3.png'
 
 const shine = keyframes`
   0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 600px;
+    background-position: -600px; /* Start off-screen to the left */
   }
   100% {
-    background-position: 600px;
+    background-position: 1200px; /* Move twice the width of the gradient to the right */
   }
 `;
 
@@ -59,7 +56,7 @@ const IntroBanner = styled.div`
     left: -15px;
     right: 0;
     height: 2px;
-    background-color: #282828;
+    background-color: #636363;
   }
 
   @media (max-width: 1000px) {
@@ -87,7 +84,7 @@ const Title = styled.h1`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ${shine} 3s infinite linear;
+  animation: ${shine} 10s infinite linear;
   
   @media (max-width: 1000px) {
     font-size: 48px;
