@@ -188,6 +188,16 @@ const Tools = styled.div`
   }
 `;
 
+const TechnologyCategory = styled.h2`
+  color: #ffa260;
+`;
+
+const Technology = styled.ul`
+  color: whitesmoke;
+  font-size: 1.1rem;
+`;
+
+
 type HomeProps = {
   contactBtnClick: () => void;
 };
@@ -220,28 +230,28 @@ function Home({ contactBtnClick}: HomeProps) {
         </IntroBanner>
         <Tools>
           <div>
-            <h3>Frontend</h3>
-            <ul>
+            <TechnologyCategory>Frontend</TechnologyCategory>
+            <Technology>
               <li>HTML5/CSS3</li>
               <li>React</li>
               <li>TypeScript</li>
               <li>Next.js</li>
-            </ul>
+            </Technology>
           </div>
           <div>
-            <h3>Backend</h3>
-            <ul>
+            <TechnologyCategory>Backend</TechnologyCategory>
+            <Technology>
               <li>Node.js</li>
               <li>Express</li>
-            </ul>
+            </Technology>
           </div>
           <div>
-            <h3>Tools</h3>
-            <ul>
+            <TechnologyCategory>Tools</TechnologyCategory>
+            <Technology>
               <li>Vite</li>
               <li>Tailwind</li>
               <li>Redux</li>
-            </ul>
+            </Technology>
           </div>
         </Tools>
       </Intro>
