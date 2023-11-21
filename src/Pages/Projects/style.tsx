@@ -107,7 +107,7 @@ export const SliderItemTitle = styled.p`
 
 export const SliderItemDescription = styled.p<{ parentClass: string }>`
   display: ${(props) => (props.parentClass === "center" ? "block" : "none")};
-  max-width: 250px;
+  max-width: 300px;
   margin: 0 auto;
   margin-bottom: 10px;
   font-size: 20px;

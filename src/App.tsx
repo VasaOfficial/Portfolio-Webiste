@@ -3,7 +3,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Triangle } from 'react-loader-spinner'
 import styled from 'styled-components';
 import LandingPage from './Pages/Landing';
-import wedding from './assets/Contact/wedding.jpg'
+import wedding from './assets/wedding.jpg'
 
 const ContactContainer = styled.div`
   position: fixed;

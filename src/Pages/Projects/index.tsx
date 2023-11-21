@@ -3,8 +3,9 @@ import { useTransition, animated } from '@react-spring/web';
 import { Section, ProjectContainer, ProjectTitle, ProjectLockup, Slider, SliderItemImage, SliderItemDescription, SliderItemTitle, SliderNext, SliderPrev, ProjectLink } from './style'
 import rightArrow from '../../assets/Projects/left.png'
 import leftArrow from '../../assets/Projects/right.png'
-import noImage from '../../assets/Projects/Image.jpg'
 import EarthSensor from '../../assets/Projects/EarthSensor.jpg'
+import Moleraj from '../../assets/Projects/moleraj.png'
+import Movie from '../../assets/Projects/movie.png'
 
 type Project = {
   title: string;
@@ -16,25 +17,25 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: 'Project 1',
-    image: `${noImage}`,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
-    live: 'https://project1.live',
-    github: 'https://github.com/project1',
+    title: 'MolerajBeograd',
+    image: `${Moleraj}`,
+    description: 'Painting company landing page with admin dashboard and reviews feature.',
+    live: 'https://moleraj-beograd.vercel.app/',
+    github: 'https://github.com/VasaOfficial/',
   },
   {
     title: 'EarthSensor',
     image: `${EarthSensor}`,
-    description: 'Find out the air quality and weather of a city near you',
+    description: 'Find out the air quality and weather of a city near you.',
     live: 'https://earth-sensor.vercel.app/',
     github: 'https://github.com/VasaOfficial/EarthSensor',
   },
   {
-    title: 'Project 3',
-    image: `${noImage}`,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.',
-    live: 'https://project3.live',
-    github: 'https://github.com/project1',
+    title: 'MovieLibrary',
+    image: `${Movie}`,
+    description: 'Search for Movies or Tv Shows suggestions with AI.',
+    live: 'https://movie-library-ten.vercel.app/',
+    github: 'https://github.com/VasaOfficial/MovieLibrary',
   },
 ]
 
