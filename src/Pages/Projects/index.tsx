@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: 'EarthSensor',
     image: `${EarthSensor}`,
     description: 'Find out the air quality and weather of a city near you',
-    live: 'https://project2.live',
+    live: 'https://earth-sensor.vercel.app/',
     github: 'https://github.com/VasaOfficial/EarthSensor',
   },
   {
@@ -71,7 +71,7 @@ function Projects() {
   return (
     <Section id='section-2'>
       <ProjectContainer>
-        <ProjectTitle>Selected Projects</ProjectTitle>
+        <ProjectTitle>Projects</ProjectTitle>
         <ProjectLockup>
           <Slider>
             {transitions((style, item) => (

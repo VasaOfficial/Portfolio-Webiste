@@ -37,7 +37,7 @@ export const Section = styled.div`
 export const ProjectContainer = styled.div`
   position: relative;
   display: flex;
-  width: 1200px;
+  width: 800px;
   max-width: 80%;
   height: 100%;
   flex-direction: column;
@@ -46,7 +46,7 @@ export const ProjectContainer = styled.div`
 `;
 
 export const ProjectTitle = styled.h2`
-  margin: 0 0 100px 0;
+  margin-bottom: 5rem;
   font-size: 30px;
   text-align: center;
   pointer-events: none;
@@ -96,9 +96,8 @@ export const SliderItemImage = styled.div`
 `;
 
 export const SliderItemTitle = styled.p`
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 800;
   color: #eab308;
 
   @media only screen and (max-width: 400px) {
@@ -111,7 +110,7 @@ export const SliderItemDescription = styled.p<{ parentClass: string }>`
   max-width: 250px;
   margin: 0 auto;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 20px;
 `;
 
 export const SliderPrev = styled.div`
