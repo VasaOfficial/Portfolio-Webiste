@@ -43,6 +43,10 @@ export const ProjectContainer = styled.div`
   flex-direction: column;
   margin: 0 auto;
   padding-top: 80px;
+
+  @media only screen and (max-width: 400px) {
+    padding-top: 0px;
+  }
 `;
 
 export const ProjectTitle = styled.h2`
@@ -51,6 +55,10 @@ export const ProjectTitle = styled.h2`
   text-align: center;
   pointer-events: none;
   color: #ffa260;
+
+  @media only screen and (max-width: 400px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const ProjectLockup = styled.div`
@@ -70,6 +78,10 @@ export const Slider = styled.ul`
   padding: 0;
   list-style: none;
   justify-content: center;
+
+  @media only screen and (max-width: 400px) {
+    margin-top: 0px;
+  }
 `;
 
 export const SliderItemImage = styled.div`
@@ -93,6 +105,10 @@ export const SliderItemImage = styled.div`
       bottom: 100px;
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    margin-top: 2rem;
+  }
 `;
 
 export const SliderItemTitle = styled.p`
@@ -111,6 +127,10 @@ export const SliderItemDescription = styled.p<{ parentClass: string }>`
   margin: 0 auto;
   margin-bottom: 10px;
   font-size: 20px;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 12px;
+  }
 `;
 
 export const SliderPrev = styled.div`
@@ -132,7 +152,12 @@ export const SliderPrev = styled.div`
   }
 
   @media only screen and (max-width: 950px) {
-    bottom: -10px;
+    bottom: -310px;
+    right: -20px
+  }
+
+  @media only screen and (max-width: 400px) {
+    bottom: -370px;
   }
 `;
 
@@ -155,7 +180,12 @@ export const SliderNext = styled.div`
   }
 
   @media only screen and (max-width: 950px) {
-    bottom: -10px;
+    bottom: -310px;
+    left: -20px
+  }
+
+  @media only screen and (max-width: 400px) {
+    bottom: -370px;
   }
 `;
 

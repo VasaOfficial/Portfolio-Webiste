@@ -47,7 +47,6 @@ const Intro = styled.div`
     padding-top: 20px;
     width: 100%;
     text-align: center;
-
   }
 `;
 
@@ -68,6 +67,10 @@ const IntroBanner = styled.div`
 
     @media (max-width: 500px) {
       bottom: 2px;
+    }
+
+    @media (max-width: 400px) {
+      bottom: 25px;
     }
   }
 
@@ -112,6 +115,11 @@ const Title = styled.h1`
     width: 100%;
     text-align: center;
     margin-top: -200px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 34px;
+    margin-top: -140px;
   }
 `;
 
@@ -175,16 +183,16 @@ const Tools = styled.div`
   list-style: none;
   align-items: flex-start;
 
+  @media (max-width: 400px) {
+    padding-bottom: 100px;
+  }
+
   div {
     max-width: 250px;
     text-decoration: none;
     color: gray;
     transition: color .2s ease-in-out;
     color: white;
-
-    @media (max-width: 400px) {
-      padding: 8px;
-    }
 
     @media (max-width: 500px) {
       padding: 10px;
@@ -218,6 +226,10 @@ const Tools = styled.div`
 const TechnologyCategory = styled.h2`
   color: #ffa260;
   font-size: 20px;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 14px;
+  }
 `;
 
 const Technology = styled.ul`
