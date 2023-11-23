@@ -41,6 +41,14 @@ const Intro = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+
+  }
 `;
 
 const IntroBanner = styled.div`
@@ -57,6 +65,10 @@ const IntroBanner = styled.div`
     right: 0;
     height: 2px;
     background-color: #636363;
+
+    @media (max-width: 500px) {
+      bottom: 2px;
+    }
   }
 
   @media (max-width: 1000px) {
@@ -64,7 +76,7 @@ const IntroBanner = styled.div`
   }
 
   @media (max-width: 500px) {
-    height: 475px;
+    width: 100%
   }
 `;
 
@@ -86,7 +98,7 @@ const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   animation: ${shine} 10s infinite linear;
   
-  @media (max-width: 1000px) {
+  @media (max-width: 1510px) {
     font-size: 48px;
   }
 
@@ -94,9 +106,12 @@ const Title = styled.h1`
     font-size: 42px;
   }
 
-  @media (max-width: 400px) {
-    font-size: 28px;
+  @media (max-width: 500px) {
+    font-size: 42px;
     padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: -200px;
   }
 `;
 
@@ -106,13 +121,17 @@ const Description = styled.p`
   line-height: 2;
   max-width: 600px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1292px) {
     font-size: 16px;
     max-width: 400px;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 1100px) {
     font-size: 14px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 16px;
   }
 `;
 
@@ -137,6 +156,14 @@ const Button = styled.button`
     box-shadow: 0 0.5em 0.5em -0.4em #eab308;
     transform: translateY(-0.25em);
     color: #eab308;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 12px;
   }
 `;
 
@@ -190,13 +217,24 @@ const Tools = styled.div`
 
 const TechnologyCategory = styled.h2`
   color: #ffa260;
+  font-size: 20px;
 `;
 
 const Technology = styled.ul`
   color: whitesmoke;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 `;
 
+const FloatCont  = styled.div`
+  color: whitesmoke;
+  font-size: 1.1rem;
+  margin-left: 8rem;
+  margin-top: -150px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
 
 type HomeProps = {
   contactBtnClick: () => void;
@@ -214,10 +252,10 @@ function Home({ contactBtnClick}: HomeProps) {
               I have a strong passion for coding and a deep-rooted love for all things related to computers and technology.
               Check out my projects in the section below and contact me if you are interested in working with me.
             </Description>
-            <Button onClick={contactBtnClick}>Contact</Button>
-            <Button>Resume</Button>
+              <Button onClick={contactBtnClick}>Contact</Button>
+              <Button>Resume</Button>
           </div>
-          <div className="float-cont">
+          <FloatCont>
             <div className="float-img">
               <img src={float1} alt="floating statue part 1" />
             </div>
@@ -227,7 +265,7 @@ function Home({ contactBtnClick}: HomeProps) {
             <div className="float-img">
               <img src={float3} alt="floating statue part 3" />
             </div>
-          </div>
+          </FloatCont>
         </IntroBanner>
         <Tools>
           <div>
