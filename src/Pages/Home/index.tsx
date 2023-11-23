@@ -210,8 +210,9 @@ function Home({ contactBtnClick}: HomeProps) {
           <div>
             <Title>Hello<br />My name is Vasa<br /></Title>
             <Description>
-              As a computer repair technician transitioning to software development,<br />
+              I am web developer,<br />
               I have a strong passion for coding and a deep-rooted love for all things related to computers and technology.
+              Check out my projects in the section below and contact me if you are interested in working with me.
             </Description>
             <Button onClick={contactBtnClick}>Contact</Button>
             <Button>Resume</Button>

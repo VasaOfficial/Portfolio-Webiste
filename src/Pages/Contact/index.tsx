@@ -1,7 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import styled from 'styled-components';
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import sculpture1 from '../../assets/sculpture1.png';
+import sculpture2 from '../../assets/sculpture2.png';
+import sculpture3 from '../../assets/sculpture3.png';
 
 const Section = styled.div`
-  position: absolute;
+  position: relative;
   list-style: none;
   width: 100%;
   height: 100%;
@@ -12,91 +17,99 @@ const Section = styled.div`
   &.is-active {
     opacity: 1;
     visibility: visible;
-    transition: opacity .4s ease-in-out .4s;
+    transition: opacity 0.4s ease-in-out 0.4s;
     list-style: none;
   }
 `;
 
-const ContactLockup = styled.div`
-  position: relative;
+const ImageContainer = styled.div`
+  position: absolute;
   display: flex;
-  width: 900px;
-  max-width: 75%;
-  height: 100%;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  left: 50px;
 `;
 
-const ModalContainer = styled.div`
-  padding: 45px 45px;
-  text-align: center;
-  background-color: black;
-  box-shadow: 0 0 30px 0 rgba(0,0,0,.75);
+const FloatImgBig = styled.div`
+  flex: 1;
+  position: absolute;
+
+  &.top {
+    top: -180px;
+    margin-right: 120px;
+  }
+
+  &.left {
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    img {
+      width: 65%;
+      height: 65%;
+    }
+  }
+
+  &.right {
+    top: 40%;
+    right: 150px;
+    transform: translateY(-50%);
+  }
+`;
+
+const TextContainer = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`;
-
-const ModalInformation = styled.div`
-  h2, p, a {
-    display: block;
-    margin: 14px 0;
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-  }
-
-  h2 {
-    margin-top: 0;
-  }
-`;
-
-const ModalOptionsList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-`;
-
-const ModalOptionItem = styled.li`
-  width: 130px;
-  margin: 0 auto 25px auto;
-  background-color: #eab308;
-`;
-
-const ModalOptionLink = styled.a`
-  display: block;
-  width: 100%;
-  padding: 8px 0;
-  text-decoration: none;
+  text-align: center;
   color: white;
-  font-weight: 700;
+  font-size: 24px;
+
+  a {
+    color: #ffa260;
+    text-decoration: none;
+    margin: 10px;
+    display: block;
+    font-size: 20px;
+
+    &:hover {
+      color: #eab308;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    color: #d3d3d3;
+  }
+`;
+
+const Title = styled.h1`
+  color: #ffa260;
 `;
 
 function Contact() {
   return (
-    <Section id='section-3'>
-        <ContactLockup>
-          <ModalContainer>
-            <ModalInformation>
-              <h2>My Contacts</h2>
-              <a href="mailto:VasaPofficial@gmail.com">VasaPofficial@gmail.com</a>
-              <p>+48 12 628 75 60</p>
-            </ModalInformation>
-            <ModalOptionsList>
-              <ModalOptionItem>
-                <ModalOptionLink href="https://www.linkedin.com/in/vasilijepleskonjicofficial/" target="_blank">LinkedIn</ModalOptionLink>
-              </ModalOptionItem>
-              <ModalOptionItem>
-                <ModalOptionLink href="https://github.com/VasaOfficial" target="_blank">GitHub</ModalOptionLink>
-              </ModalOptionItem>
-              <ModalOptionItem>
-                <ModalOptionLink href="#0" target="_blank">Upwork</ModalOptionLink>
-              </ModalOptionItem>
-            </ModalOptionsList>
-          </ModalContainer>
-        </ContactLockup>
+    <Section id="section-3">
+      <ImageContainer>
+        <FloatImgBig className="float-img-slow top">
+          <img src={sculpture1} alt="floating statue 1" />
+        </FloatImgBig>
+        <FloatImgBig className="float-img-medium left">
+          <img src={sculpture2} alt="floating statue 2" />
+        </FloatImgBig>
+        <FloatImgBig className="float-img-fast right">
+          <img src={sculpture3} alt="floating statue 3" />
+        </FloatImgBig>
+      </ImageContainer>
+      <TextContainer>
+        <Title>My Contacts</Title>
+        <a href="mailto:VasaPofficial@gmail.com"><FaEnvelope /> VasaPofficial@gmail.com</a>
+        <p>+381 65 258 370 6</p>
+        <a href="https://www.linkedin.com/in/vasilijepleskonjicofficial/" target="_blank" rel="noopener noreferrer"><FaLinkedin /> LinkedIn</a>
+        <a href="https://github.com/VasaOfficial" target="_blank" rel="noopener noreferrer"><FaGithub /> GITHUB</a>
+      </TextContainer>
     </Section>
   );
 }
