@@ -1,7 +1,7 @@
 <h1 align="center">My Portfolio Website</h1>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/113908218/227735703-a8a43e34-0eac-4959-9b53-326ebce8e4e0.png" alt="Screenshot of My Portfolio Website" width="800">
-</p>
+
+![portfolio](https://github.com/VasaOfficial/Portfolio-Website/assets/113908218/d51659b2-f8e4-44c3-9c0a-10cb144bdf67)
+
 
 ## Description
 
@@ -9,7 +9,7 @@ Welcome to my personal portfolio website, where I showcase my projects, skills, 
 
 <h2>Live Demo</h2>
 
-Check out the live demo of my Portfolio Website [here](https://your-demo-url.com).
+Check out the live demo of my Portfolio Website [here]([https://your-demo-url.com](https://vasilije-pleskonjic-portfolio.vercel.app/)).
 
 ## Features
 
